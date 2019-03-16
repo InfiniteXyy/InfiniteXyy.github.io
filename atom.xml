@@ -5,9 +5,9 @@
   <subtitle>Code Life Easy</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://infinitex.github.io/"/>
-  <updated>2019-03-16T06:39:56.911Z</updated>
-  <id>https://infinitex.github.io/</id>
+  <link href="https://infinitexyy.github.io/"/>
+  <updated>2019-03-16T10:15:11.666Z</updated>
+  <id>https://infinitexyy.github.io/</id>
   
   <author>
     <name>Yiyang Xu</name>
@@ -17,9 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实习准备计划</title>
+    <link href="https://infinitexyy.github.io/2019/03/16/intern-prepare/"/>
+    <id>https://infinitexyy.github.io/2019/03/16/intern-prepare/</id>
+    <published>2019-03-16T08:06:48.000Z</published>
+    <updated>2019-03-16T10:15:11.666Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是我个人，为应聘<strong>Web前端实习生</strong>而准备的复习目录<br><a id="more"></a></p><h3 id="为什么要做这个计划"><a href="#为什么要做这个计划" class="headerlink" title="为什么要做这个计划"></a>为什么要做这个计划</h3><p>又到了每年春招的时间。然而后知后觉的我，一直等到2月底的时候，才开始准备。这时候发现周围好多同学都早早就投递了简历_(:з」∠)__。本着进不了也要试一试的心态，我在没怎么准备情况下就投了tx的前端实习生岗，想着自己也做过几个小项目，还是可以说一点的。emmm，然而果不其然被刷掉了，像跨域之类的问题，因为自己平时都是用的proxy、照着readme弄过一两次cors的样子😂，所以根本答不上来什么呀。还有一题，问我list的含义（事后回想应该是问的this），于是瞎答一通，还被嘲讽js基础都不知道为啥面前端。。。😢</p><p>因此呢，为了能<strong>系统地巩固Web前端的知识</strong>（下次能答出更多的问题），现在决定开始复习啦！</p><p>我会将复习的过程记录在这个博客里，一方面是监督自己，一方面也是记录一下心得，分享一下经验吧。。</p><p><strong>如果有什么意见或者建议的话，请务必评论哈！</strong></p><h3 id="几个方向"><a href="#几个方向" class="headerlink" title="几个方向"></a>几个方向</h3><p>我计划从以下几个方向开始复习，每个部分，都会有对应的文章博客来记录整理知识点。这就当是个目录吧！</p><ul><li>概念基础<ul><li>JS语言基础</li><li>Html/CSS基础</li><li>浏览器/协议安全</li><li>计算机网络</li></ul></li><li>框架基础<ul><li>React</li><li>Redux</li></ul></li><li>算法与设计<ul><li>刷leetcode吧</li><li>设计模式</li></ul></li><li>其它<ul><li>个人介绍</li><li>项目整理</li></ul></li></ul><h5 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h5><p><img src="mind.png" alt="mind-graph"></p><h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><p>怎么说呢，虽然很多人急于找实习、找工作，但是我还是更希望能够更加平稳的舒服地去学习新的知识。所以我暂时不会去投很多的简历，可能是精力不够吧，我觉得编程应该是一个慢慢来的、像画画一样的活动，可以停下来，出去走走，晒晒太阳，思考一下我想做出什么，思考一下现在做了些什么。而不是扎在电脑前，固执于某个方法，或者为了快速拿出成果而不眠不休。</p><p>这当然不是说，坚持是不好的。而是在坚持前，应该问自己几个问题：</p><ul><li>我为什么在做这个事情</li><li>这个有必要吗</li><li>有没有更好的办法</li></ul><p>看面经、刷面试题、刷框架基础知识，固然效果显著，但我想慢慢来，慢慢学习基础，并在实践中巩固。</p><p>春天的白玉兰开了，不去看看嘛？</p><h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><p><strong>目录会更新吗</strong>？</p><p>这个当然。就跟迭代开发一样嘛，后续如果发现有疏漏的点，或者可以有更加清晰的知识体系，都会在此更新。</p><p><strong>这个博客会一直更新下去吗？</strong></p><p>会的！最近为了准备实习，看了许多同龄人的博客，觉得非常有意思，所以会把平时的学到的知识或者想法分享到这里，不只是记录下准备的过程。</p><p><strong>目标的企业是？</strong></p><p>这个先不说了QWQ，(其实也没大考虑好)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是我个人，为应聘&lt;strong&gt;Web前端实习生&lt;/strong&gt;而准备的复习目录&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的第一篇博客</title>
-    <link href="https://infinitex.github.io/2019/03/16/my_first_blog/"/>
-    <id>https://infinitex.github.io/2019/03/16/my_first_blog/</id>
+    <link href="https://infinitexyy.github.io/2019/03/16/my-first-blog/"/>
+    <id>https://infinitexyy.github.io/2019/03/16/my-first-blog/</id>
     <published>2019-03-16T05:54:48.000Z</published>
     <updated>2019-03-16T06:39:56.911Z</updated>
     
