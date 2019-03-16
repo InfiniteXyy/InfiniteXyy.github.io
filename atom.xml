@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://infinitexyy.github.io/"/>
-  <updated>2019-03-16T12:36:46.713Z</updated>
+  <updated>2019-03-16T15:22:48.087Z</updated>
   <id>https://infinitexyy.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://infinitexyy.github.io/2019/03/16/leetcode-search/"/>
     <id>https://infinitexyy.github.io/2019/03/16/leetcode-search/</id>
     <published>2019-03-16T12:10:21.000Z</published>
-    <updated>2019-03-16T12:36:46.713Z</updated>
+    <updated>2019-03-16T15:22:48.087Z</updated>
     
-    <content type="html"><![CDATA[<p>人是擅长<strong>归纳总结</strong>的，当你重复一件事情多次以后，自然而然地就能找到其中的规律。于是按照以下规则来做题就可以事半功倍。</p><a id="more"></a><ol><li>优先完成相似题目</li><li>从Easy的题目开始</li><li>思考过后仍做不出来就看答案</li><li>对于曾看答案的题目，要重复做</li><li>做完相似题目，对其归纳总结</li></ol><p>注1：这些方法都是来自于<a href="https://www.youtube.com/channel/UC5xDNEcvb1vgw3lE21Ack2Q" target="_blank" rel="noopener">花花酱</a>的一期视频，相似题目来自于<a href="https://bit.ly/2E8yBHq" target="_blank" rel="noopener">LeetCode 题目分类</a>(感谢huahua)，大家可以参考了刷题~</p><p>注2：这篇博客只是一份个人笔记，如有错误，还请指出啦，谢谢~</p><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-16</em> 更新”回溯”部分整理（Search部分的第一行）</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>人是擅长<strong>归纳总结</strong>的，当你重复一件事情多次以后，自然而然地就能找到其中的规律。于是按照以下规则来做题就可以事半功倍。</p><a id="more"></a><ol><li>优先完成相似题目</li><li>从Easy的题目开始</li><li>思考过后仍做不出来就看答案</li><li>对于曾看答案的题目，要重复做</li><li>做完相似题目，对其归纳总结</li></ol><p>注1：这些方法都是来自于<a href="https://www.youtube.com/channel/UC5xDNEcvb1vgw3lE21Ack2Q" target="_blank" rel="noopener">花花酱</a>的一期视频，相似题目来自于<a href="https://bit.ly/2E8yBHq" target="_blank" rel="noopener">LeetCode 题目分类</a>(感谢huahua)，大家可以参考了刷题~</p><p>注2：这篇博客只是一份个人笔记，如有错误，还请指出啦，谢谢~</p><h3 id="搜索简介"><a href="#搜索简介" class="headerlink" title="搜索简介"></a>搜索简介</h3><p>搜索是很多暴力算法的基础，即遍历所有情况，找到正确答案。</p><p>它们都有以下特征：</p><ul><li>需要枚举<strong>所有的情况</strong></li><li>有一个<strong>判断是否为解</strong>的方法</li></ul><h3 id="组合-conbination"><a href="#组合-conbination" class="headerlink" title="组合(conbination)"></a>组合(conbination)</h3><p>有一类题，它们通常要求将一些选项<strong>组合</strong>，选择出可行的解。</p><p>例如：八皇后在棋盘上的摆法，3个不同的数字组合为9的方法……这种题目根据上一情况的解可以递归地判断下一步的情况。因此对这类问题，可以使用<strong>递归回溯</strong>的方法。</p><p>通常有以下步骤：</p><ol><li>将某个元素放到数组</li><li>递归(使用该数组)</li><li>将当前内容弹出</li></ol><p>这样就可以遍历所有的情况了。</p><p>例如<code>求幂集</code>这道题，其递归伪代码表示为：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ans = []</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backtrack</span>(<span class="params">curList, from</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 不需要判断，全部都可以加入</span></span><br><span class="line">  ans.add(curList.clone())</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="keyword">from</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    curList.push(nums[i]);</span><br><span class="line">    <span class="comment">// 2</span></span><br><span class="line">    backtrack(curList, i + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 3</span></span><br><span class="line">    curList.remove(curList.length - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>tips：如果要求解集不能有重复（排除用Set），可以先对候选数字排序，一步步缩小候选的范围，来保证独立性。</p><h3 id="置换-permutation"><a href="#置换-permutation" class="headerlink" title="置换(permutation)"></a>置换(permutation)</h3><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-16</em> 更新”回溯”部分整理（Search部分的第一行）</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;人是擅长&lt;strong&gt;归纳总结&lt;/strong&gt;的，当你重复一件事情多次以后，自然而然地就能找到其中的规律。于是按照以下规则来做题就可以事半功倍。&lt;/p&gt;
+      &lt;h4 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h4&gt;&lt;p&gt;人是擅长&lt;strong&gt;归纳总结&lt;/strong&gt;的，当你重复一件事情多次以后，自然而然地就能找到其中的规律。于是按照以下规则来做题就可以事半功倍。&lt;/p&gt;
     
     </summary>
     
