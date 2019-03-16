@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>InfiniteX</title>
+  
+  <subtitle>Code Life Easy</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://infinitex.github.io/"/>
+  <updated>2019-03-16T06:39:56.911Z</updated>
+  <id>https://infinitex.github.io/</id>
+  
+  <author>
+    <name>Yiyang Xu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="https://infinitex.github.io/2019/03/16/my_first_blog/"/>
+    <id>https://infinitex.github.io/2019/03/16/my_first_blog/</id>
+    <published>2019-03-16T05:54:48.000Z</published>
+    <updated>2019-03-16T06:39:56.911Z</updated>
+    
+    <content type="html"><![CDATA[<p>试验一下<code>markdown</code>的渲染效果<br><a id="more"></a></p><h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h5 id="List"><a href="#List" class="headerlink" title="List"></a>List</h5><ul><li>Reason</li><li><strong>Typescript</strong></li><li>Flow</li><li>Elm</li></ul><h5 id="To-do-List"><a href="#To-do-List" class="headerlink" title="To-do List"></a>To-do List</h5><ul><li style="list-style: none"><input type="checkbox"> Vue.js</li><li style="list-style: none"><input type="checkbox" checked> React</li><li style="list-style: none"><input type="checkbox"> Angular</li></ul><hr><h5 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> temp = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (temp[i] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">      temp[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.values(temp);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h5 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h5><blockquote><p>Hi, this is infinitex</p><p>Second line</p></blockquote><h5 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h5><p><a href="http://www.infinitex.cn" target="_blank" rel="noopener">Infinitex.cn</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;试验一下&lt;code&gt;markdown&lt;/code&gt;的渲染效果&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
