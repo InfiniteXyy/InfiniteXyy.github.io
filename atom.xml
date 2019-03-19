@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://infinitexyy.github.io/"/>
-  <updated>2019-03-19T15:56:49.138Z</updated>
+  <updated>2019-03-19T16:01:17.911Z</updated>
   <id>https://infinitexyy.github.io/</id>
   
   <author>
@@ -17,17 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>面试题（一）动态规划</title>
+    <title>面试题（二）动态规划</title>
     <link href="https://infinitexyy.github.io/2019/03/18/leetcode-dp/"/>
     <id>https://infinitexyy.github.io/2019/03/18/leetcode-dp/</id>
     <published>2019-03-18T15:32:10.000Z</published>
-    <updated>2019-03-19T15:56:49.138Z</updated>
+    <updated>2019-03-19T16:01:17.911Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="动态规划简介"><a href="#动态规划简介" class="headerlink" title="动态规划简介"></a>动态规划简介</h3><p>虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是<strong>减少重复性</strong>的运算。如何减少重复性运算呢？</p><a id="more"></a><p>DP的做法是维持一个状态数组，用来换数据。在此上，我认为DP有四个部分最为重要</p><ul><li>状态数组是什么</li><li>状态数组是怎么初始化的</li><li>状态是如何迁移的(怎么根据上一个状态获得新的状态从而达到缓存的目的)</li><li>如何从状态数组获得结果</li></ul><p>对于斐波那契数列而言</p><p><strong>状态数组：</strong>数列中的每个数字</p><p><strong>初始化：</strong>dp[0] = dp[1] = 1</p><p><strong>迁移：</strong>dp[n] = dp[n-1] + dp[n-2]</p><p><strong>结果：</strong>return dp[n]</p><p>另外dp写法又有自顶而下，自下而上两种，我的理解是递归和循环。我个人偏向递归，因为有种：我要知道a的话就要先知道b的递推感。</p><p>因此下面的解法，我都会使用递归来完成，两者的运行速度不会相差太多。</p><h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-19</em><br>更新”动态规划简介”部分</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>动态规划简介</strong></p><p>虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是<strong>减少重复性</strong>的运算。如何减少重复性运算呢？</p><a id="more"></a><p>DP的做法是维持一个状态数组，用来换数据。在此上，我认为DP有四个部分最为重要</p><ul><li>状态数组是什么</li><li>状态数组是怎么初始化的</li><li>状态是如何迁移的(怎么根据上一个状态获得新的状态从而达到缓存的目的)</li><li>如何从状态数组获得结果</li></ul><p>对于斐波那契数列而言</p><p><strong>状态数组：</strong>数列中的每个数字</p><p><strong>初始化：</strong>dp[0] = dp[1] = 1</p><p><strong>迁移：</strong>dp[n] = dp[n-1] + dp[n-2]</p><p><strong>结果：</strong>return dp[n]</p><p>另外dp写法又有自顶而下，自下而上两种，我的理解是递归和循环。我个人偏向递归，因为有种：我要知道a的话就要先知道b的递推感。</p><p>因此下面的解法，我都会使用递归来完成，两者的运行速度不会相差太多。</p><h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-19</em><br>更新”动态规划简介”部分</p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;动态规划简介&quot;&gt;&lt;a href=&quot;#动态规划简介&quot; class=&quot;headerlink&quot; title=&quot;动态规划简介&quot;&gt;&lt;/a&gt;动态规划简介&lt;/h3&gt;&lt;p&gt;虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是&lt;strong&gt;减少重复性&lt;/strong&gt;的运算。如何减少重复性运算呢？&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;动态规划简介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是&lt;strong&gt;减少重复性&lt;/strong&gt;的运算。如何减少重复性运算呢？&lt;/p&gt;
     
     </summary>
     
