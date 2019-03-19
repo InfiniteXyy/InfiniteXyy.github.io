@@ -16,15 +16,15 @@
 <li>有一个<strong>判断是否为解</strong>的方法</li>
 </ul>
 <p>下面将从几个具体的类型，来介绍如何使用暴力搜索。这些类型分别对应<a href="https://bit.ly/2E8yBHq" target="_blank" rel="noopener">LeetCode 题目分类</a>，Search页内的题目。</p>
-<h3 id="组合-conbination"><a href="#组合-conbination" class="headerlink" title="组合(conbination)"></a>组合(conbination)</h3><p>这类题通常要求将一些选项<strong>组合</strong>，选择出可行的解。</p>
-<p>例如：3个不同的数字组合为9的方法……对这类问题，可以使用<strong>回溯</strong>的方法。</p>
-<p>回溯通常有以下步骤：</p>
+<h5 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h5><p>回溯是暴力搜索常用的算法，在暴力搜索中，回溯通常有以下步骤：</p>
 <ol>
+<li>判断该数组是否为解(若为解则退出)</li>
 <li>将某个元素放到数组</li>
 <li>递归(使用该数组)</li>
 <li>将当前内容弹出</li>
 </ol>
 <p>这样就可以遍历所有的情况了。</p>
+<h3 id="组合-conbination"><a href="#组合-conbination" class="headerlink" title="组合(conbination)"></a>组合(conbination)</h3><p>这类题通常要求将一些选项<strong>组合</strong>，选择出可行的解。例如：3个不同的数字组合为9的方法……对这类问题，可以使用<strong>回溯</strong>的方法。</p>
 <p>例如<code>求幂集</code>这道题，其递归伪代码表示为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ans = []</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backtrack</span>(<span class="params">curList, from</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 不需要判断，全部都可以加入</span></span><br><span class="line">  ans.add(curList.clone())</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="keyword">from</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    curList.push(nums[i]);</span><br><span class="line">    <span class="comment">// 2 (这里每次将起始点加1，这样就可以保证不重复)</span></span><br><span class="line">    backtrack(curList, i + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 3</span></span><br><span class="line">    curList.remove(curList.length - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>tips：如果输入数组有重复的元素，且要求解集不能有重复，可以先对候选数字排序，然后，加入以下判断语句来过滤掉重复的解，来保证独立性。</p>
@@ -44,11 +44,11 @@
 <p>例如八皇后问题回溯部分的java代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> row)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 若尝试到了最后一行，则获得了一个解</span></span><br><span class="line">  <span class="keyword">if</span> (row == n) &#123;</span><br><span class="line">    ans++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 判断这行里面可以放在哪些位置，逐步尝试，并递归</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; n; col++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (valid(row, col)) &#123;</span><br><span class="line">      graph[row][col] = <span class="keyword">true</span>;</span><br><span class="line">      backtrack(row + <span class="number">1</span>);</span><br><span class="line">      graph[row][col] = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>tips：DFS问题可以通过减枝来优化，即那些显然无解的路径可以避免去走。</p>
-<p>更新日志</p>
-<p><em>2018-3-16</em><br>更新”回溯”部分整理（Search部分的第一行）</p>
+<h3 id="广度优先-BFS"><a href="#广度优先-BFS" class="headerlink" title="广度优先(BFS)"></a>广度优先(BFS)</h3><p>TODO</p>
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-16</em><br>更新”回溯”部分整理（Search部分的第一行）</p>
 <p><em>2018-3-17</em><br>将”回溯”更名为”组合”，将”置换”更名为”排列”，更新”排列”部分整理(Search部分的第二行)，修改”组合“部分，八皇后问题不能算组合</p>
 <p><em>2018-3-18</em><br>更新”DFS“部分整理(Search部分的第3-5行)，修改”搜索”相关描述</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/03/16/intern-prepare/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+</div></article></div></main><footer><div class="paginator"><a href="/2019/03/18/leetcode-dp/" class="prev">上一篇</a><a href="/2019/03/16/intern-prepare/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
     clientID: 'b6e1047fa622a6e8f554',
     clientSecret: '37f6dc0c4c6ed7892e12f214b2ea319edb968f9e',
     repo: 'InfiniteXyy.github.io',

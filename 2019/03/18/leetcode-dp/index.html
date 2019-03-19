@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 面试题（一）动态规划 · InfiniteX</title><meta name="description" content="面试题（一）动态规划 - Yiyang Xu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://infinitexyy.github.io/atom.xml" title="InfiniteX"></head><body><div class="wrap"><header><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li><li class="nav-list-item"><a href="https://github.com/InfiniteXyy" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">面试题（一）动态规划</h1><div class="post-info">2019年3月18日</div><div class="post-content"><h3 id="动态规划简介"><a href="#动态规划简介" class="headerlink" title="动态规划简介"></a>动态规划简介</h3><p>虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是<strong>减少重复性</strong>的运算。如何减少重复性运算呢？</p>
+<a id="more"></a>
+<p>DP的做法是维持一个状态数组，用来换数据。在此上，我认为DP有四个部分最为重要</p>
+<ul>
+<li>状态数组是什么</li>
+<li>状态数组是怎么初始化的</li>
+<li>状态是如何迁移的(怎么根据上一个状态获得新的状态从而达到缓存的目的)</li>
+<li>如何从状态数组获得结果</li>
+</ul>
+<p>对于斐波那契数列而言</p>
+<p><strong>状态数组：</strong>数列中的每个数字</p>
+<p><strong>初始化：</strong>dp[0] = dp[1] = 1</p>
+<p><strong>迁移：</strong>dp[n] = dp[n-1] + dp[n-2]</p>
+<p><strong>结果：</strong>return dp[n]</p>
+<p>另外dp写法又有自顶而下，自下而上两种，我的理解是递归和循环。我个人偏向递归，因为有种：我要知道a的话就要先知道b的递推感。</p>
+<p>因此下面的解法，我都会使用递归来完成，两者的运行速度不会相差太多。</p>
+<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p><em>2018-3-19</em><br>更新”动态规划简介”部分</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2019/03/16/leetcode-search/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+    clientID: 'b6e1047fa622a6e8f554',
+    clientSecret: '37f6dc0c4c6ed7892e12f214b2ea319edb968f9e',
+    repo: 'InfiniteXyy.github.io',
+    owner: 'InfiniteXyy',
+    admin: 'InfiniteXyy',
+    id: window.location.pathname,
+    distractionFreeMode: false  // Facebook-like distraction free mode
+})
+gitalk.render('gitalk-container')</script><div class="copyright"><p>© 2019 <a href="https://infinitexyy.github.io">Yiyang Xu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
