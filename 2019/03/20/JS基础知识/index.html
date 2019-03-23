@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> JS基础知识 · InfiniteX</title><meta name="description" content="JS基础知识 - Yiyang Xu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://infinitexyy.github.io/atom.xml" title="InfiniteX"></head><body><div class="wrap"><header><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li><li class="nav-list-item"><a href="https://github.com/InfiniteXyy" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">JS基础知识</h1><div class="post-info">2019年3月20日</div><div class="post-content"><p>整理了一下自己不熟悉的几个点</p>
+<a id="more"></a>
+<ul>
+<li>数据类型</li>
+<li>基本语法、控制流</li>
+<li>函数</li>
+<li>面向对象</li>
+<li>错误处理</li>
+<li>多线程</li>
+<li>测试</li>
+</ul>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p><code>typeof</code>：判断基本数据类型(<code>null</code>也是<code>object</code>)</p>
+<p><strong><code>instanceof</code>：判断具体是哪种对象</strong></p>
+<p><code>number</code> <code>object</code> <code>string</code> <code>boolean</code> <code>undefined</code> <code>null</code> <code>symbol</code></p>
+<ul>
+<li>unicode、utf-8</li>
+<li><code>in</code>操作符与<code>hasOwnProperty</code></li>
+<li>Map、Set</li>
+<li>解构：默认值，多层解构，swap</li>
+</ul>
+<h4 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h4><ul>
+<li><code>interable</code>, <code>forEach</code>, <code>for...of...</code></li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li>函数<code>arguments</code></li>
+<li>变量作用域，var互不影响、从内而外</li>
+<li>变量提升</li>
+<li>window全局作用域</li>
+<li><code>this</code>与strict mode</li>
+<li>apply/call</li>
+<li>箭头函数的词法作用域</li>
+<li>生成器(yield) 与 ajax</li>
+<li>闭包：函数与函数中的变量</li>
+</ul>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><ul>
+<li>基本对象Date/Reg/JSON<ul>
+<li>Date在JS中月份从0开始</li>
+<li>Reg用于split很方便</li>
+<li>Reg还可以用来分组(使用括号)</li>
+<li>JSON.stringfy(object, replacer, space)</li>
+</ul>
+</li>
+<li>this，与运行上下文</li>
+<li>原型链，一个对象的原型指向另一个对象</li>
+<li>为原型增加方法，使用prototype</li>
+<li>prototype vs <code>__proto__</code> <a href="https://www.zhihu.com/question/34183746" target="_blank" rel="noopener">知乎</a><ul>
+<li>prototype是函数特有的对象，它只有一个属性constructor，它的内容是函数自身</li>
+<li>proto指向构造它的函数的prototype</li>
+</ul>
+</li>
+<li>class</li>
+</ul>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><ul>
+<li>Set, Map</li>
+<li>let</li>
+<li>const</li>
+<li><p>for … of …</p>
+</li>
+<li><p>解构</p>
+</li>
+<li>箭头函数</li>
+<li>yield</li>
+<li>class继承(取代原来原型链的复杂方法)</li>
+</ul>
+<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><ul>
+<li>短路运算符 a || b (if a is null then b else a) a &amp;&amp; b (if a is null then null, else b)</li>
+<li><code>window</code> <code>navigator</code> <code>location</code> <code>screen</code><ul>
+<li>history</li>
+<li>Document<ul>
+<li>appendChild, insertBefore</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>表单<ul>
+<li>onsubmit 返回值</li>
+<li>Type submit reset</li>
+<li>input hidden,没有name属性的不会被提交</li>
+</ul>
+</li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2019/03/18/leetcode-dp/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+    clientID: 'b6e1047fa622a6e8f554',
+    clientSecret: '37f6dc0c4c6ed7892e12f214b2ea319edb968f9e',
+    repo: 'InfiniteXyy.github.io',
+    owner: 'InfiniteXyy',
+    admin: 'InfiniteXyy',
+    id: window.location.pathname,
+    distractionFreeMode: false  // Facebook-like distraction free mode
+})
+gitalk.render('gitalk-container')</script><div class="copyright"><p>© 2019 <a href="https://infinitexyy.github.io">Yiyang Xu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
