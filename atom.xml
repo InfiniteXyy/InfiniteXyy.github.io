@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://infinitexyy.github.io/"/>
-  <updated>2019-03-24T08:15:51.411Z</updated>
+  <updated>2019-03-27T15:16:06.323Z</updated>
   <id>https://infinitexyy.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题(三)树</title>
+    <link href="https://infinitexyy.github.io/2019/03/27/leetcode-tree/"/>
+    <id>https://infinitexyy.github.io/2019/03/27/leetcode-tree/</id>
+    <published>2019-03-27T02:24:07.000Z</published>
+    <updated>2019-03-27T15:16:06.323Z</updated>
+    
+    <content type="html"><![CDATA[<p>树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。</p><a id="more"></a><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>分为三种遍历，前中后序。即根节点出现在式子的前面、中间、最后。如果用递归实现就比较简单。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (t == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  helper(t.left);</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  result.add(t.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  helper(t.right); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一个中序遍历，前后序遍历同理。</p><p>如果使用迭代的话，考虑到递归就是一个运行栈，因此这里也可以使用栈的方式来<strong>模拟</strong>递归。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">    stack.push(cur);</span><br><span class="line">    cur = cur.left;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  cur = s.pop();</span><br><span class="line">  result.add(cur.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  cur = cur.right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>其基本思想与递归是一致的。</p><p>首先把所有左边的内容加入栈(进入递归函数)。</p><p>然后从最后加入的元素开始，逐个弹出</p><p>另外还有一种个题目，是对两个树进行比较。同样可以将大问题变小。比如两棵树相同意味着，它们根节点相同，且左右子树都相同。在此不再多说。</p><h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>与遍历采取的方法相同，可能有以下几种类型</p><ul><li><p>求深度(上下、左右)</p><p>通过递归(每次dfs深度+1)的思想来简化计算。</p></li><li><p>收集数字</p><p>可以使用额外的类来记录每个节点的深度、或者使用递归的方式来记录深度。</p></li></ul><h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>核心在于，删除某些节点也是递推的。从根节点开始删，等于从子树删完，然后再与根节点相连接。</p><p>于是问题就简化为对某个节点内容的判断，之后靠返回值再慢慢拼接起来就可以了。</p><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>TODO</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>JS基础知识</title>
