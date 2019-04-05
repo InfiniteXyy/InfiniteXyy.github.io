@@ -39,13 +39,14 @@
     <link href="https://infinitexyy.github.io/2019/03/30/leetcode-graph/"/>
     <id>https://infinitexyy.github.io/2019/03/30/leetcode-graph/</id>
     <published>2019-03-30T14:51:15.000Z</published>
-    <updated>2019-03-30T14:54:47.124Z</updated>
+    <updated>2019-04-05T08:40:01.443Z</updated>
     
-    <content type="html"><![CDATA[<p>要解决图的问题，基本上无非是通过DFS、BFS来遍历，使用DP原则来优化算法。因此，图是一个综合性极强的题目类型。</p><a id="more"></a><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h3 id="拓扑序"><a href="#拓扑序" class="headerlink" title="拓扑序"></a>拓扑序</h3><h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><h3 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h3>]]></content>
+    <content type="html"><![CDATA[<p>要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。</p><p>图的内容实在太过重要，每次笔试四道题必有一道图(体感)，所以还是要好好准备呀。</p><a id="more"></a><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul><li><p>深拷贝</p><ul><li>可以使用哈希表来存储每个节点，然后新建一个图，使用递归或者循环队列的方式，把所有的节点都链接起来</li></ul></li><li><p>DFS、BFS</p></li><li>矩阵的遍历(例如棋盘的遍历)<ul><li>可以直接对矩阵进行修改达到<strong>标记</strong>的作用！</li></ul></li></ul><h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><ul><li>前置课程<ul><li>卡恩算法(维护一个队列，每次加入入度为0的节点，直到队列为空)</li></ul></li></ul><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>与BFS的关系</p><h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><h3 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h3>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;要解决图的问题，基本上无非是通过DFS、BFS来遍历，使用DP原则来优化算法。因此，图是一个综合性极强的题目类型。&lt;/p&gt;
+      &lt;p&gt;要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。&lt;/p&gt;
+&lt;p&gt;图的内容实在太过重要，每次笔试四道题必有一道图(体感)，所以还是要好好准备呀。&lt;/p&gt;
     
     </summary>
     

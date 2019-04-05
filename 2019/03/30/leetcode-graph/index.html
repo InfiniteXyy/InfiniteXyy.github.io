@@ -1,6 +1,27 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 面试题（四）图 · InfiniteX</title><meta name="description" content="面试题（四）图 - Yiyang Xu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://infinitexyy.github.io/atom.xml" title="InfiniteX"></head><body><div class="wrap"><header><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li><li class="nav-list-item"><a href="https://github.com/InfiniteXyy" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">面试题（四）图</h1><div class="post-info">2019年3月30日</div><div class="post-content"><p>要解决图的问题，基本上无非是通过DFS、BFS来遍历，使用DP原则来优化算法。因此，图是一个综合性极强的题目类型。</p>
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 面试题（四）图 · InfiniteX</title><meta name="description" content="面试题（四）图 - Yiyang Xu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://infinitexyy.github.io/atom.xml" title="InfiniteX"></head><body><div class="wrap"><header><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li><li class="nav-list-item"><a href="https://github.com/InfiniteXyy" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">面试题（四）图</h1><div class="post-info">2019年3月30日</div><div class="post-content"><p>要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。</p>
+<p>图的内容实在太过重要，每次笔试四道题必有一道图(体感)，所以还是要好好准备呀。</p>
 <a id="more"></a>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h3 id="拓扑序"><a href="#拓扑序" class="headerlink" title="拓扑序"></a>拓扑序</h3><h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><h3 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h3></div></article></div></main><footer><div class="paginator"><a href="/2019/04/02/realm-learn/" class="prev">上一篇</a><a href="/2019/03/27/leetcode-tree/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li><p>深拷贝</p>
+<ul>
+<li>可以使用哈希表来存储每个节点，然后新建一个图，使用递归或者循环队列的方式，把所有的节点都链接起来</li>
+</ul>
+</li>
+<li><p>DFS、BFS</p>
+</li>
+<li>矩阵的遍历(例如棋盘的遍历)<ul>
+<li>可以直接对矩阵进行修改达到<strong>标记</strong>的作用！</li>
+</ul>
+</li>
+</ul>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><ul>
+<li>前置课程<ul>
+<li>卡恩算法(维护一个队列，每次加入入度为0的节点，直到队列为空)</li>
+</ul>
+</li>
+</ul>
+<h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>与BFS的关系</p>
+<h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><h3 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h3></div></article></div></main><footer><div class="paginator"><a href="/2019/04/02/realm-learn/" class="prev">上一篇</a><a href="/2019/03/27/leetcode-tree/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
     clientID: 'b6e1047fa622a6e8f554',
     clientSecret: '37f6dc0c4c6ed7892e12f214b2ea319edb968f9e',
     repo: 'InfiniteXyy.github.io',
