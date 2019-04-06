@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> webpack的第一次学习 · InfiniteX</title><meta name="description" content="webpack的第一次学习 - Yiyang Xu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://infinitexyy.github.io/atom.xml" title="InfiniteX"></head><body><div class="wrap"><header><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li><li class="nav-list-item"><a href="https://github.com/InfiniteXyy" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">webpack的第一次学习</h1><div class="post-info">2019年4月6日</div><div class="post-content"><p>webpack可能是现在使用范围最广的前端打包工具了。(另外也是面试题常考的内容之一了)</p>
+<p>这篇文章记录了从零开始了解、学习webpack的过程，也不是说之前没有用过webpack啦，只不过那时候都是用的create-react-app或者vue init之类的cli工具，为了能够更加了解这些打包工具，所以我打算好好看一下webpack(之前挖的坑还没弄好QWQ)</p>
+<a id="more"></a>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>了解<ul>
+<li>这部分介绍webpack的主要概念、使用场景</li>
+<li><strong>最后会用一句话对webpack进行总结</strong></li>
+</ul>
+</li>
+<li>学习<ul>
+<li>这部分介绍webpack基本配置</li>
+<li>如何使用loader、插件、环境</li>
+<li><strong>最后会手动地新建一个<code>React</code>的项目</strong></li>
+</ul>
+</li>
+<li>细节(这部分会在webpack(二)记录)<ul>
+<li>这部分介绍webpack的使用细节</li>
+<li>涉及一小部分的原理</li>
+<li><strong>最后会尝试实现一个最最easy的打包工具</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h3><p>你是否遇到过这样的情况？当你想开发一个项目。起初，你只有一个html文件，一切看起来都是那么简单轻松，但当代码行数逐渐变多的时候，在一个文件里面写代码已经完全吃不消了。于是，你开始把代码分散在不同的文件里，例如，样式放到css，脚本放到js里，在项目比较小的时候，这似乎也没什么问题，但随着项目的变大，你的html里链接了各种脚本，这使你维护起来即为麻烦。</p>
+<p>要是能有一个工具，能自动帮我把分散的脚本整合起来就好啦，同时我也不需要考虑引入的顺序OMG。</p>
+<p>webpack就是这样一个工具。</p>
+<p>简单而言，它做的就是将分离的模块打包在一起的功能。这里的模块包括css文件、js脚本、图片等等。</p>
+<p><strong>它有以下两个核心概念</strong>，大概就那么简单！</p>
+<ul>
+<li><p>入口起点、出口</p>
+<ul>
+<li>从哪里开始读取模块</li>
+<li>整合出来的<em>bundles</em>导出到哪里</li>
+</ul>
+</li>
+<li><p>loader</p>
+<ul>
+<li>将不同类型的文件（根据文件名判断）都转化为webpack认识的模块</li>
+<li>引用官网的一句话</li>
+</ul>
+<blockquote>
+<p>“嘿，webpack 编译器，当你碰到「在 <code>require()</code>/<code>import</code> 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先<strong>使用</strong> <code>raw-loader</code> 转换一下。”</p>
+</blockquote>
+</li>
+</ul>
+<p>另外，webpack还提供<strong>插件</strong>的功能，可以在打包的同时对代码进行各种操作，(例如压缩等等)，也可以设置不同<strong>模式</strong>，让webpack根据开发环境的不同选择不同的策略。</p>
+<p><strong>一句话总结</strong></p>
+<p><strong>webpack</strong>是一个用来将多个文件打包的工具，可以设置<strong>loader</strong>来对不同种类的文件打包，同时可以用<strong>插件</strong>扩展webpack的打包功能。</p>
+<hr>
+<h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>那么现在已经了解了基本用途啦！</p>
+<p>看看怎么使用吧。</p>
+<p><strong>安装</strong></p>
+<p>和很多其他工具一样，webpack是一个nodejs的package，由于webpack是开发过程中的打包工具，因此保存为devDependance。</p>
+<p>(webpack4 + 需要安装webpack-cli，这样可以在命令行中运行webpack)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack webpack-cli -D</span><br><span class="line"><span class="comment"># 或者npm</span></span><br><span class="line">npm install --save-dev webpack webpack-cli</span><br></pre></td></tr></table></figure>
+<p><strong>尝试</strong></p>
+<p>创建一个html文件<code>index.html</code>，和一个js文件<code>src/index.js</code>(这是默认的入口出口)，试试看打包吧。运行 npx webpack。</p>
+<p>这样脚本就被打包到一个main.js文件中啦(默认的出口)，如果你有其他依赖的话，webpack也会自动把它们打包进main.js。</p>
+<p>有趣的是，webpack自带了对<code>import</code>、<code>export</code>的支持，所以你可以不需要写require啦，其它es6特性，需要babel等转译器的帮助。</p>
+<p><strong>配置</strong></p>
+<p>如果只有这样的功能，那么webpack还远远达不到它自称高可配置性的要求。</p>
+<p>事实上，大部分（所有）的项目都需要配置文件来管理。</p>
+<p>他就是大名鼎鼎的<code>webpack.config.js</code>，它是一个js文件，所以，需要通过<code>module.exports</code>来导出配置对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果没有配置文件的话，就是这样的配置</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'main.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Loader</strong></p>
+<p>webpack默认只能加载js模块，对于其它（例如css）文件，需要对应的loader来加载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add style-loader css-loader -D </span><br><span class="line"><span class="comment"># style-loader处理import和require的加载</span></span><br><span class="line"><span class="comment"># css-loader将样式添加到页面</span></span><br></pre></td></tr></table></figure>
+<p>安装完成后，修改配置文件，向module.rules中添加属性，注意这里有个小坑的地方，loader是按顺序加载的，所以style-loader需要在css-loader之前。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">      use: [</span><br><span class="line">        <span class="string">'style-loader'</span>,</span><br><span class="line">        <span class="string">'css-loader'</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其它loader还有file-loader(加载图片、字体等)，csv-loader xml-loader等等</p>
+<p><strong>插件</strong></p>
+<p>使用插件减少很多繁杂的劳动。例如：作为单页面应用入口的html文件，其实并没有什么内容，但是如果因为模块入口的名字发生改变而不得不去修改html代码的话，是非常影响体验的。</p>
+<p>这里可以安装HtmlWebpackPlugin自动根据模板生成网页文件，或是CleanWebpackPlugin来清理dist中的过期内容。</p>
+<p><strong>必要的杂项</strong></p>
+<ul>
+<li>devtool: ‘inline-source-map’ 用来定位打包后的代码属于哪个文件</li>
+<li>开发热更新<ul>
+<li><code>webpack --watch</code>可以观察所有的依赖文件是否发生了修改</li>
+<li><code>webpack-dev-server</code>提供一个web服务器，自动对内容的变更进行跟踪</li>
+<li><code>webpack-dev-middleware</code>提供一个中间件，将webpack打包的内容传递到例如express的服务器中</li>
+</ul>
+</li>
+<li>模块热替换</li>
+</ul>
+<p><strong>接下来，可以尝试开始构建一个React项目了</strong></p>
+<p>首先是新建node项目，安装webpack、babel、webpack-dev-server等开发依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir hello-react</span><br><span class="line"><span class="built_in">cd</span> hello-react</span><br><span class="line">yarn init</span><br><span class="line"><span class="comment"># 先把之前所学的弄上吧！</span></span><br><span class="line">yarn add -D webpack webpack-cli webpack-dev-server</span><br><span class="line"><span class="comment"># 基本上都会用上的插件</span></span><br><span class="line">yarn add -D clean-webpack-plugin html-webpack-plugin</span><br></pre></td></tr></table></figure>
+<p>编辑配置文件和package.json(主要是build和start的指令，在此不再赘述啦)</p>
+<p>其中index.html就是一个只要一个id为root的div的模板。用于之后react绑定component</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个简单的配置文件</span></span><br><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./index.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: <span class="string">'./dist'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      template: <span class="string">'./index.html'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>运行yarn start，应该就可以正确运行啦。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">  "start": "webpack-dev-server --open",</span><br><span class="line">  "build": "webpack"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来就要开始安装react了，这还是我第一次不用cra呢，有点小紧张。</p>
+<p>首先安装必要的依赖(React和React-dom是一起安装的，前者是核心库，后者用于操作dom，虽然说通常只会用到ReactDom.render。。。)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react react-dom <span class="comment"># 这次不是开发依赖了，不需要参数-D</span></span><br></pre></td></tr></table></figure>
+<p>尝试像create-react-app一样地写一个入口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./src/App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));</span><br></pre></td></tr></table></figure>
+<p>编译错误！jsx语法不能被识别，然后class作为es6模块也没法被浏览器理解，还需要babel等解析器的支持！</p>
+<p>安装loader和preset和babelcore<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add -D babel-core babel-loader babel-preset-env babel-preset-react <span class="comment"># 并不是完全体，但应该够用</span></span><br></pre></td></tr></table></figure></p>
+<p>loader用于webpack，preset用于babel翻译react语法，和es6，es7</p>
+<p>安装完以后，设置babelrc，并在webpack中加入loader</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// babel.rc或者在package.json</span><br><span class="line">&#123; <span class="attr">"presets"</span>: [<span class="string">"env"</span>, <span class="string">"react"</span>] &#125;</span><br><span class="line"></span><br><span class="line">// webpack.config.js</span><br><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    ...</span><br><span class="line">    &#123; test: /\.js$/, use: 'babel-loader' &#125;</span><br><span class="line">    ...</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再试试看，是不是能运行了呢？</p>
+<p>以上就是一个简单的React项目。当然还有很多可以优化的地方，生产开发环境优化程度分离、模块热替换。等等。另外，下次试试看使用TypeScript吧！😁</p>
+<hr>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>Will be available soon before 2018/4/10.</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2019/04/02/realm-learn/" class="next">下一篇</a></div><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+    clientID: 'b6e1047fa622a6e8f554',
+    clientSecret: '37f6dc0c4c6ed7892e12f214b2ea319edb968f9e',
+    repo: 'InfiniteXyy.github.io',
+    owner: 'InfiniteXyy',
+    admin: 'InfiniteXyy',
+    id: window.location.pathname,
+    distractionFreeMode: false  // Facebook-like distraction free mode
+})
+gitalk.render('gitalk-container')</script><div class="copyright"><p>© 2019 <a href="https://infinitexyy.github.io">Yiyang Xu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
