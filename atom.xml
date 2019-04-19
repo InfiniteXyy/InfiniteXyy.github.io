@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://infinitexyy.github.io/"/>
-  <updated>2019-04-12T03:10:07.050Z</updated>
+  <updated>2019-04-19T15:35:21.946Z</updated>
   <id>https://infinitexyy.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题(五) 二分查找</title>
+    <link href="https://infinitexyy.github.io/2019/04/17/leetcode-bs/"/>
+    <id>https://infinitexyy.github.io/2019/04/17/leetcode-bs/</id>
+    <published>2019-04-17T06:20:45.000Z</published>
+    <updated>2019-04-19T15:35:21.946Z</updated>
+    
+    <content type="html"><![CDATA[<p>二分查找是针对有序数组的查找策略，其复杂度是<code>log(n)</code>。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。</p><p>可见，二分查找能解决的问题通常有以下特征</p><ul><li>需要找到一个特定的值</li><li>这个值处在一个范围内</li><li><strong>有一个指标来表示这个值是偏大了还是偏小了</strong></li></ul><a id="more"></a><p><strong>写成Python代码的二分查找</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">array = [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取两头闭区间</span></span><br><span class="line">first = <span class="number">0</span></span><br><span class="line">last = len(array) - <span class="number">1</span></span><br><span class="line"><span class="comment"># 求下界</span></span><br><span class="line"><span class="comment"># 直到first == last才会结束</span></span><br><span class="line"><span class="keyword">while</span> (first &lt;= last): </span><br><span class="line">  mid = first + (last - fisrt) // <span class="number">2</span> <span class="comment"># 防止数字溢出</span></span><br><span class="line">  <span class="keyword">if</span> (array[mid] &lt; target): first = mid + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>: last = mid - <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> first</span><br></pre></td></tr></table></figure><p>可能有的变化</p><ul><li>重复数字求<strong>上下界</strong></li><li>有序数列在一个点<strong>翻转</strong><ul><li>这里可以对翻转情况进行分类讨论(左右边哪边翻转了)</li></ul></li></ul><p><strong>总结</strong></p><p>二分查找主要是要找到可以二分的元素，需要注意的是二分的边界值，比方说＞还是≥，</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;二分查找是针对有序数组的查找策略，其复杂度是&lt;code&gt;log(n)&lt;/code&gt;。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。&lt;/p&gt;
+&lt;p&gt;可见，二分查找能解决的问题通常有以下特征&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要找到一个特定的值&lt;/li&gt;
+&lt;li&gt;这个值处在一个范围内&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有一个指标来表示这个值是偏大了还是偏小了&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>webpack的第二次学习</title>
@@ -168,9 +192,9 @@
     <link href="https://infinitexyy.github.io/2019/03/16/intern-prepare/"/>
     <id>https://infinitexyy.github.io/2019/03/16/intern-prepare/</id>
     <published>2019-03-16T08:06:48.000Z</published>
-    <updated>2019-03-20T05:08:14.684Z</updated>
+    <updated>2019-04-15T02:00:21.968Z</updated>
     
-    <content type="html"><![CDATA[<p>这是本人为应聘Web前端实习生而准备的复习目录<br><a id="more"></a></p><h3 id="为什么要做这个计划"><a href="#为什么要做这个计划" class="headerlink" title="为什么要做这个计划"></a>为什么要做这个计划</h3><p>又到了每年春招的时间。然而后知后觉的我，一直等到2月底的时候，才开始准备。这时候发现周围好多同学都早早就投递了简历_(:з」∠)__。本着进不了也要试一试的心态，我在没怎么准备情况下就投了tx的前端实习生岗，想着自己也做过几个小项目，还是可以说一点的。emmm，然而果不其然被刷掉了，像跨域之类的问题，因为自己平时都是用的proxy、照着readme弄过一两次cors的样子😂，所以根本答不上来什么呀。还有一题，问我list的含义（事后回想应该是问的this），于是瞎答一通，还被嘲讽js基础都不知道为啥面前端。。。😢</p><p>因此呢，为了能<strong>系统地巩固Web前端的知识</strong>（下次能答出更多的问题），现在决定开始复习啦！</p><p>我会将复习的过程记录在这个博客里，一方面是监督自己，一方面也是记录一下心得，分享一下经验吧。。</p><p><strong>如果有什么意见或者建议的话，请务必评论哈！谢谢！</strong></p><h3 id="几个方向"><a href="#几个方向" class="headerlink" title="几个方向"></a>几个方向</h3><p>我计划从以下几个方向开始复习，每个部分，都会有对应的文章博客来记录整理知识点。这就当是个目录吧！</p><ul><li>概念基础<ul><li>JS语言基础</li><li>Html/CSS基础</li><li>浏览器/协议安全</li><li>计算机网络</li></ul></li><li>框架基础<ul><li>React</li><li>Redux</li></ul></li><li>算法与设计<ul><li>刷leetcode吧</li><li>设计模式</li></ul></li><li>其它<ul><li>个人介绍</li><li>项目整理</li></ul></li></ul><h5 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h5><p><img src="mind.png" alt="mind-graph"></p><h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><p>怎么说呢，虽然很多人急于找实习、找工作，但是我还是更希望能够更加平稳的舒服地去学习新的知识。所以我暂时不会去投很多的简历，可能是精力不够吧，我觉得编程应该是一个慢慢来的、像画画一样的活动，可以停下来，出去走走，晒晒太阳，思考一下我想做出什么，思考一下现在做了些什么。而不是扎在电脑前，固执于某个方法，或者为了快速拿出成果而不眠不休。</p><p>这当然不是说，坚持是不好的。而是在坚持前，应该问自己几个问题：</p><ul><li>我为什么在做这个事情</li><li>这个有必要吗</li><li>有没有更好的办法</li></ul><p>看面经、刷面试题、刷框架基础知识，固然效果显著，但我想慢慢来，慢慢学习基础，并在实践中巩固。</p><p>春天的白玉兰开了，不去看看嘛？</p><h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><p><strong>目录会更新吗</strong>？</p><p>这个当然。就跟迭代开发一样嘛，后续如果发现有疏漏的点，或者可以有更加清晰的知识体系，都会在此更新。</p><p><strong>这个博客会一直更新下去吗？</strong></p><p>会的！最近为了准备实习，看了许多同龄人的博客，觉得非常有意思，所以会把平时的学到的知识或者想法分享到这里，不只是记录下准备的过程。</p><p><strong>目标的企业是？</strong></p><p>这个先不说了QWQ，(其实也没大考虑好)</p>]]></content>
+    <content type="html"><![CDATA[<p>这是本人为应聘Web前端实习生而准备的复习目录<br><a id="more"></a></p><h3 id="为什么要做这个计划"><a href="#为什么要做这个计划" class="headerlink" title="为什么要做这个计划"></a>为什么要做这个计划</h3><p>又到了每年春招的时间。然而后知后觉的我，一直等到2月底的时候，才开始准备。这时候发现周围好多同学都早早就投递了简历_(:з」∠)__。本着进不了也要试一试的心态，我在没怎么准备情况下就投了tx的前端实习生岗，想着自己也做过几个小项目，还是可以说一点的。emmm，然而果不其然被刷掉了，像跨域之类的问题，因为自己平时都是用的proxy、照着readme弄过一两次cors的样子😂，所以根本答不上来什么呀。还有一题，问我list的含义（事后回想应该是问的this），于是瞎答一通，还被嘲讽js基础都不知道为啥面前端。。。😢</p><p>因此呢，为了能<strong>系统地巩固Web前端的知识</strong>（下次能答出更多的问题），现在决定开始复习啦！</p><p>我会将复习的过程记录在这个博客里，一方面是监督自己，一方面也是记录一下心得，分享一下经验吧。。</p><p><strong>如果有什么意见或者建议的话，请务必评论哈！谢谢！</strong></p><h3 id="几个方向"><a href="#几个方向" class="headerlink" title="几个方向"></a>几个方向</h3><p>我计划从以下几个方向开始复习，每个部分，都会有对应的文章博客来记录整理知识点。这就当是个目录吧！</p><ul><li>概念基础<ul><li>JS语言基础</li><li>Html/CSS基础</li><li>浏览器/协议安全</li><li>计算机网络</li><li>操作系统</li><li>数据库</li></ul></li><li>框架基础<ul><li>React</li><li>Redux</li></ul></li><li>算法与设计<ul><li>刷leetcode吧</li><li>设计模式</li></ul></li><li>其它<ul><li>个人介绍</li><li>项目整理</li></ul></li></ul><h5 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h5><p><img src="mind.png" alt="mind-graph"></p><h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><p>怎么说呢，虽然很多人急于找实习、找工作，但是我还是更希望能够更加平稳的舒服地去学习新的知识。所以我暂时不会去投很多的简历，可能是精力不够吧，我觉得编程应该是一个慢慢来的、像画画一样的活动，可以停下来，出去走走，晒晒太阳，思考一下我想做出什么，思考一下现在做了些什么。而不是扎在电脑前，固执于某个方法，或者为了快速拿出成果而不眠不休。</p><p>这当然不是说，坚持是不好的。而是在坚持前，应该问自己几个问题：</p><ul><li>我为什么在做这个事情</li><li>这个有必要吗</li><li>有没有更好的办法</li></ul><p>看面经、刷面试题、刷框架基础知识，固然效果显著，但我想慢慢来，慢慢学习基础，并在实践中巩固。</p><p>春天的白玉兰开了，不去看看嘛？</p><h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><p><strong>目录会更新吗</strong>？</p><p>这个当然。就跟迭代开发一样嘛，后续如果发现有疏漏的点，或者可以有更加清晰的知识体系，都会在此更新。</p><p><strong>这个博客会一直更新下去吗？</strong></p><p>会的！最近为了准备实习，看了许多同龄人的博客，觉得非常有意思，所以会把平时的学到的知识或者想法分享到这里，不只是记录下准备的过程。</p><p><strong>目标的企业是？</strong></p><p>这个先不说了QWQ，(其实也没大考虑好)</p>]]></content>
     
     <summary type="html">
     
