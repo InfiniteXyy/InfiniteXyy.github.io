@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>InfiniteX</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/favicon.png" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Quicksand|Montserrat:600|Nunito:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="header-container">
+      <div id="wrapper">
+        <h1>InfiniteX</h1>
+        <div id="separator"></div>
+        <h2>Code Life Easy.</h2>
+        <div id="icon-wrapper">
+          <a href="https://github.com/InfiniteXyy">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="bottom-container">
+      <p id="section-title">My Projects</p>
+      <div id="button-container">
+        <a class="button active-button" onclick="changePage(1)"><p>TOOLS</p></a>
+        <a class="button" onclick="changePage(2)"><p>PROJECTS</p></a>
+        <a class="button" href="blog" target="_blank"><p>BLOG</p></a>
+      </div>
+      <div id="card-container">
+        <a
+          class="card-wrapper page1 visible"
+          href="https://github.com/InfiniteXyy/vscode-better-online-judge"
+        >
+          <div class="update-detail">last update at 2018/10/12</div>
+          <div class="card">
+            <img src="static/betteroj.png" />
+            <div class="card-body">
+              <h3>Better Online Judge</h3>
+              <div class="separator"></div>
+              <p>VS Code plugin for Creating your Online Judge answer set</p>
+            </div>
+          </div>
+        </a>
+        <a
+          class="card-wrapper page1 visible"
+          href="https://github.com/InfiniteXyy/bingo-english"
+        >
+          <div class="update-detail">last update at 2018/11/11</div>
+          <div class="card">
+            <img src="static/bingo.png" />
+            <div class="card-body">
+              <h3>Bingo-english</h3>
+              <div class="separator"></div>
+              <p>A cli application for you to learn new english words.</p>
+            </div>
+          </div>
+        </a>
+        <a class="card-wrapper page2" href="http://fic.infinitex.cn">
+          <div class="update-detail">last update at 2018/10/22</div>
+          <div class="card">
+            <img src="static/fic.png" />
+            <div class="card-body">
+              <h3>Infinitex .Fic</h3>
+              <div class="separator"></div>
+              <p>Subscribe fictions and relaxed yourself from ads.</p>
+            </div>
+          </div>
+        </a>
+        <div class="card-empty-wrapper page3"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
