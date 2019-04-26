@@ -3,11 +3,11 @@
   <title>InfiniteX</title>
   
   <subtitle>Code Life Easy</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://infinitexyy.github.io/"/>
-  <updated>2019-04-19T15:35:21.946Z</updated>
-  <id>https://infinitexyy.github.io/</id>
+  <link href="https://infinitexyy.github.io/blog/"/>
+  <updated>2019-04-20T11:12:18.906Z</updated>
+  <id>https://infinitexyy.github.io/blog/</id>
   
   <author>
     <name>Yiyang Xu</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>面试题(五) 二分查找</title>
-    <link href="https://infinitexyy.github.io/2019/04/17/leetcode-bs/"/>
-    <id>https://infinitexyy.github.io/2019/04/17/leetcode-bs/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/04/17/leetcode-bs/"/>
+    <id>https://infinitexyy.github.io/blog/2019/04/17/leetcode-bs/</id>
     <published>2019-04-17T06:20:45.000Z</published>
-    <updated>2019-04-19T15:35:21.946Z</updated>
+    <updated>2019-04-20T11:12:18.906Z</updated>
     
-    <content type="html"><![CDATA[<p>二分查找是针对有序数组的查找策略，其复杂度是<code>log(n)</code>。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。</p><p>可见，二分查找能解决的问题通常有以下特征</p><ul><li>需要找到一个特定的值</li><li>这个值处在一个范围内</li><li><strong>有一个指标来表示这个值是偏大了还是偏小了</strong></li></ul><a id="more"></a><p><strong>写成Python代码的二分查找</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">array = [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取两头闭区间</span></span><br><span class="line">first = <span class="number">0</span></span><br><span class="line">last = len(array) - <span class="number">1</span></span><br><span class="line"><span class="comment"># 求下界</span></span><br><span class="line"><span class="comment"># 直到first == last才会结束</span></span><br><span class="line"><span class="keyword">while</span> (first &lt;= last): </span><br><span class="line">  mid = first + (last - fisrt) // <span class="number">2</span> <span class="comment"># 防止数字溢出</span></span><br><span class="line">  <span class="keyword">if</span> (array[mid] &lt; target): first = mid + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>: last = mid - <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> first</span><br></pre></td></tr></table></figure><p>可能有的变化</p><ul><li>重复数字求<strong>上下界</strong></li><li>有序数列在一个点<strong>翻转</strong><ul><li>这里可以对翻转情况进行分类讨论(左右边哪边翻转了)</li></ul></li></ul><p><strong>总结</strong></p><p>二分查找主要是要找到可以二分的元素，需要注意的是二分的边界值，比方说＞还是≥，</p>]]></content>
+    <content type="html"><![CDATA[<p>二分查找是针对有序数组的查找策略，其复杂度是<code>log(n)</code>。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。</p><p>可见，二分查找能解决的问题通常有以下特征</p><ul><li>需要找到一个特定的值</li><li>这个值处在一个范围内</li><li><strong>有一个指标来表示这个值是偏大了还是偏小了</strong></li></ul><a id="more"></a><p><strong>写成Python代码的二分查找</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">array = [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取两头闭区间</span></span><br><span class="line">first = <span class="number">0</span></span><br><span class="line">last = len(array) - <span class="number">1</span></span><br><span class="line"><span class="comment"># 求下界</span></span><br><span class="line"><span class="comment"># 直到first == last才会结束</span></span><br><span class="line"><span class="keyword">while</span> (first &lt;= last): </span><br><span class="line">  mid = first + (last - fisrt) // <span class="number">2</span> <span class="comment"># 防止数字溢出</span></span><br><span class="line">  <span class="keyword">if</span> (array[mid] &lt; target): first = mid + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>: last = mid - <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> first</span><br></pre></td></tr></table></figure><p>可能有的变化</p><ul><li>重复数字求<strong>上下界</strong></li><li>有序数列在一个点<strong>翻转</strong><ul><li>这里可以对翻转情况进行分类讨论(左右边哪边翻转了)</li></ul></li><li>二维元素的二分查找</li><li>二分查找的判断条件复杂</li></ul><p><strong>总结</strong></p><p>二分查找主要是要找到可以二分的元素，需要注意的是二分的边界值，比方说＞还是≥，</p>]]></content>
     
     <summary type="html">
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>webpack的第二次学习</title>
-    <link href="https://infinitexyy.github.io/2019/04/12/minipack/"/>
-    <id>https://infinitexyy.github.io/2019/04/12/minipack/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/04/12/minipack/"/>
+    <id>https://infinitexyy.github.io/blog/2019/04/12/minipack/</id>
     <published>2019-04-12T02:05:25.000Z</published>
     <updated>2019-04-12T03:10:07.050Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>webpack的第一次学习</title>
-    <link href="https://infinitexyy.github.io/2019/04/06/webpack/"/>
-    <id>https://infinitexyy.github.io/2019/04/06/webpack/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/04/06/webpack/"/>
+    <id>https://infinitexyy.github.io/blog/2019/04/06/webpack/</id>
     <published>2019-04-06T07:24:53.000Z</published>
     <updated>2019-04-06T15:57:08.870Z</updated>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>realm-learn</title>
-    <link href="https://infinitexyy.github.io/2019/04/02/realm-learn/"/>
-    <id>https://infinitexyy.github.io/2019/04/02/realm-learn/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/04/02/realm-learn/"/>
+    <id>https://infinitexyy.github.io/blog/2019/04/02/realm-learn/</id>
     <published>2019-04-02T04:18:21.000Z</published>
     <updated>2019-04-02T04:19:09.990Z</updated>
     
@@ -97,8 +97,8 @@
   
   <entry>
     <title>面试题（四）图</title>
-    <link href="https://infinitexyy.github.io/2019/03/30/leetcode-graph/"/>
-    <id>https://infinitexyy.github.io/2019/03/30/leetcode-graph/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/30/leetcode-graph/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/30/leetcode-graph/</id>
     <published>2019-03-30T14:51:15.000Z</published>
     <updated>2019-04-09T12:26:20.782Z</updated>
     
@@ -116,12 +116,12 @@
   
   <entry>
     <title>面试题（三）树</title>
-    <link href="https://infinitexyy.github.io/2019/03/27/leetcode-tree/"/>
-    <id>https://infinitexyy.github.io/2019/03/27/leetcode-tree/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/27/leetcode-tree/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/27/leetcode-tree/</id>
     <published>2019-03-27T02:24:07.000Z</published>
-    <updated>2019-03-30T14:50:59.122Z</updated>
+    <updated>2019-04-20T11:23:34.800Z</updated>
     
-    <content type="html"><![CDATA[<p>树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。</p><a id="more"></a><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>分为三种遍历，前中后序。即根节点出现在式子的前面、中间、最后。如果用递归实现就比较简单。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (t == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  helper(t.left);</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  result.add(t.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  helper(t.right); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一个中序遍历，前后序遍历同理。</p><p>如果使用迭代的话，考虑到递归就是一个运行栈，因此这里也可以使用栈的方式来<strong>模拟</strong>递归。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">    stack.push(cur);</span><br><span class="line">    cur = cur.left;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  cur = s.pop();</span><br><span class="line">  result.add(cur.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  cur = cur.right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>其基本思想与递归是一致的。</p><p>首先把所有左边的内容加入栈(进入递归函数)。</p><p>然后从最后加入的元素开始，逐个弹出</p><p>另外还有一种个题目，是对两个树进行比较。同样可以将大问题变小。比如两棵树相同意味着，它们根节点相同，且左右子树都相同。在此不再多说。</p><h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>与遍历采取的方法相同，可能有以下几种类型</p><ul><li><p>求深度(上下、左右)</p><p>通过递归(每次dfs深度+1)的思想来简化计算。</p></li><li><p>收集数字</p><p>可以使用额外的类来记录每个节点的深度、或者使用递归的方式来记录深度。</p></li></ul><h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>核心在于，删除某些节点也是递推的。从根节点开始删，等于从子树删完，然后再与根节点相连接。</p><p>于是问题就简化为对某个节点内容的判断，之后靠返回值再慢慢拼接起来就可以了。</p><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3>]]></content>
+    <content type="html"><![CDATA[<p>树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。</p><a id="more"></a><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>分为三种遍历，前中后序。即根节点出现在式子的前面、中间、最后。如果用递归实现就比较简单。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (t == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  helper(t.left);</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  result.add(t.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  helper(t.right); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是一个中序遍历，前后序遍历同理。</p><p>如果使用迭代的话，考虑到递归就是一个运行栈，因此这里也可以使用栈的方式来<strong>模拟</strong>递归。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">  <span class="comment">// 0</span></span><br><span class="line">  <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">    stack.push(cur);</span><br><span class="line">    cur = cur.left;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  cur = s.pop();</span><br><span class="line">  result.add(cur.val);</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  cur = cur.right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>其基本思想与递归是一致的。</p><p>首先把所有左边的内容加入栈(进入递归函数)。</p><p>然后从最后加入的元素开始，逐个弹出</p><p>另外还有一种个题目，是对两个树进行比较。同样可以将大问题变小。比如两棵树相同意味着，它们根节点相同，且左右子树都相同。在此不再多说。</p><h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>与遍历采取的方法相同，可能有以下几种类型</p><ul><li><p>求深度(上下、左右)</p><p>通过递归(每次dfs深度+1)的思想来简化计算。</p></li><li><p>收集数字</p><p>可以使用额外的类来记录每个节点的深度、或者使用递归的方式来记录深度。</p></li></ul><h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>核心在于，删除某些节点也是递推的。从根节点开始删，等于从子树删完，然后再与根节点相连接。</p><p>于是问题就简化为对某个节点内容的判断，之后靠返回值再慢慢拼接起来就可以了。</p><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>核心在于，将大问题变成小问题，将求和的任务交给自己的左右节点去做，这样自己就只要处理自己能处理的值就行了，本质都是递归。</p>]]></content>
     
     <summary type="html">
     
@@ -134,8 +134,8 @@
   
   <entry>
     <title>JS基础知识</title>
-    <link href="https://infinitexyy.github.io/2019/03/20/JS-learn/"/>
-    <id>https://infinitexyy.github.io/2019/03/20/JS-learn/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/20/JS-learn/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/20/JS-learn/</id>
     <published>2019-03-20T05:05:28.000Z</published>
     <updated>2019-03-24T08:15:51.411Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>面试题（二）动态规划</title>
-    <link href="https://infinitexyy.github.io/2019/03/18/leetcode-dp/"/>
-    <id>https://infinitexyy.github.io/2019/03/18/leetcode-dp/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/18/leetcode-dp/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/18/leetcode-dp/</id>
     <published>2019-03-18T15:32:10.000Z</published>
     <updated>2019-03-24T09:18:53.075Z</updated>
     
@@ -171,8 +171,8 @@
   
   <entry>
     <title>面试题（一）搜索</title>
-    <link href="https://infinitexyy.github.io/2019/03/16/leetcode-search/"/>
-    <id>https://infinitexyy.github.io/2019/03/16/leetcode-search/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/16/leetcode-search/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/16/leetcode-search/</id>
     <published>2019-03-16T12:10:21.000Z</published>
     <updated>2019-03-23T08:52:54.780Z</updated>
     
@@ -189,8 +189,8 @@
   
   <entry>
     <title>实习准备计划</title>
-    <link href="https://infinitexyy.github.io/2019/03/16/intern-prepare/"/>
-    <id>https://infinitexyy.github.io/2019/03/16/intern-prepare/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/16/intern-prepare/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/16/intern-prepare/</id>
     <published>2019-03-16T08:06:48.000Z</published>
     <updated>2019-04-15T02:00:21.968Z</updated>
     
@@ -207,8 +207,8 @@
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="https://infinitexyy.github.io/2019/03/16/my-first-blog/"/>
-    <id>https://infinitexyy.github.io/2019/03/16/my-first-blog/</id>
+    <link href="https://infinitexyy.github.io/blog/2019/03/16/my-first-blog/"/>
+    <id>https://infinitexyy.github.io/blog/2019/03/16/my-first-blog/</id>
     <published>2019-03-16T05:54:48.000Z</published>
     <updated>2019-03-16T14:28:58.339Z</updated>
     
