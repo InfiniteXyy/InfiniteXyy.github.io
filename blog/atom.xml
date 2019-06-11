@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://infinitexyy.github.io/blog/"/>
-  <updated>2019-04-20T11:12:18.906Z</updated>
+  <updated>2019-06-11T08:36:53.943Z</updated>
   <id>https://infinitexyy.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>没啥用的云计算杂七杂八知识点</title>
+    <link href="https://infinitexyy.github.io/blog/2019/06/11/clould/"/>
+    <id>https://infinitexyy.github.io/blog/2019/06/11/clould/</id>
+    <published>2019-06-11T03:06:26.000Z</published>
+    <updated>2019-06-11T08:36:53.943Z</updated>
+    
+    <content type="html"><![CDATA[<p>施工中……😺<br><a id="more"></a></p><h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><p><strong>云用户 vs 云租户 vs 云提供者 vs 云服务用户</strong></p><p>泛指：</p><ol><li>云提供者：<strong>提供</strong>基于云的IT资源的提供方</li><li>云用户：<strong>使用</strong>基于云的IT资源的用户方</li></ol><p>具体：</p><ol><li>云租户：一个公司或者团体或者个人，共同租用了一个云资源。<ol><li>多租户问题：服务能同时提供给多个租户，最好能共享同一个Runtime。这不仅需要保证基本的服务能正确提供，同时也要保障用户之间的隔离。</li><li>多租户问题可以再不同的层次进行满足。硬件层、虚拟层、中间件层、应用层</li></ol></li></ol><p><strong>云边界 &amp; 因特网 &amp; 万维网</strong></p><ol><li>云部署在Internet上，具有有限的边界。云通过Web发布对云资源的访问</li><li>Internet是基础，Web设计应用。云部署在Internet智商</li><li>“企业内部的”IT环境，虽然也可以远程访问，但它处于组织边界，不是云。</li></ol><p><strong>IT资源及其扩展性 vs 云服务</strong></p><ol><li>IT资源是与IT相关的物理<strong>或者</strong>虚拟的事物。例如服务器、虚拟服务器、存储设备、虚拟网关……</li><li>扩展性分为水平、垂直扩展，分别代表：增加更多的资源、用更大的资源替代原来较小的资源。水平扩展更加常见。</li><li>云服务是：任何可以通过云远程访问的IT资源。</li></ol><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p><strong>按需使用</strong></p><p>可扩展</p><p><strong>可测量</strong></p><p>远程供给</p><h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul><li>云部署模式<ul><li>公有云</li><li>私有云</li><li>混合云</li></ul></li><li>云服务模式<ul><li>IaaS</li><li>PaaS</li><li>SaaS</li></ul></li></ul><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>架构</p><p>用户体验</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;施工中……😺&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>面试题(五) 二分查找</title>
