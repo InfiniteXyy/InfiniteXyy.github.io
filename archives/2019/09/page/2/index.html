@@ -24,11 +24,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>InfiniteX</title>
     <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
-    }
-
     body {
         margin: 0;
     }
@@ -191,7 +186,6 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
     <link rel="preload" href="/scripts/main.js" as="script">
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
     <!-- fancybox -->
@@ -212,6 +206,7 @@
     
     <a class="home-link" href=/>InfiniteX</a>
 </header>
+
     <div class="wrapper">
         <div class="site-intro" style="
 
@@ -223,7 +218,7 @@
 ">
     
     <!-- 主页  -->
-            
+    
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
@@ -241,8 +236,9 @@
         
     </div>
 </div>
+
         <script>
- 
+
   // get user agent
   var browser = {
     versions: function () {
@@ -287,7 +283,7 @@
     } else {
       WebFont.load({
         custom: {
-          families: ['Oswald-Regular']
+          families: []
         },
         loading: function () {  //所有字体开始加载
           // console.log('loading');
@@ -331,11 +327,12 @@
   }
 
   asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js",
     "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
     "/lib/webfontloader.min.js"
   ], asyncCb, asyncErr)
-</script>        
+</script>
+
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
             <main class="main index-page">
@@ -346,330 +343,29 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/16/面经/Nvidia 笔试/" >
-            
-                <span>英伟达Web笔试</span>
-        </a>
-        <div class="abstract-content">
-            33道选择题（错误的笔记）
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "笔经">笔经</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/16/算法题/滑动窗口最大值/" >
-            
-                <span>滑动窗口最大值</span>
-        </a>
-        <div class="abstract-content">
-            维护一个队列，队列头部始终为当前最大值每次移动时都会加入新元素，并删除前方所有比它小的。之后删除所有下标不在窗口内的元素
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "队列">队列</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/16/算法题/数据流的中位数/" >
-            
-                <span>数据流的中位数</span>
-        </a>
-        <div class="abstract-content">
-            通过维护一个大顶堆和一个小顶堆来保证小顶堆最小的要比大顶堆最大的大
-一个插左边一个插右边然后适当维护各个数字的位置
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "堆">堆</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/15/算法题/不用四则运算做加法/" >
-            
-                <span>不用四则运算做加法</span>
-        </a>
-        <div class="abstract-content">
-            12345and = num1 &amp; num2; // 与的话表示可以进位xor = num1 ^ num2 // 异或表示可以直接相加num1 = and &lt;&lt; 1num2 = xor;// 这里是循环
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "位运算">位运算</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/14/算法题/和为S且乘积最小的两个数/" >
-            
-                <span>和为S且乘积最小的两个数</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "双指针">双指针</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/14/算法题/只出现一次的数/" >
-            
-                <span>只出现一次的数</span>
-        </a>
-        <div class="abstract-content">
-            除了两个只出现一次的数，其他都是偶数次。可以考虑划分两部分进行异或运算，显然异或的结果不是 0，那么根据那个不为 1 的位（一部分是 0 一部分是 1）来划分
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "位运算">位运算</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/14/算法题/丑数/" >
-            
-                <span>丑数</span>
-        </a>
-        <div class="abstract-content">
-            准确的说应该是 3 指针通过指针来控制下一个应该乘的 arr 位置
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "双指针">双指针</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/13/算法题/栈的弹出顺序/" >
-            
-                <span>栈的弹出顺序</span>
-        </a>
-        <div class="abstract-content">
-            非常神奇的双指针跟一般的指针逼近不一样，这道题是通过双指针来模拟栈的弹出压入历史
-另一方面 如果要计算有多少种情况，有一个数可以表示 catalan 数
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "双指针">双指针</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/12/算法题/旋转递增数列求最小值/" >
-            
-                <span>旋转递增数列求最小值</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "双指针">双指针</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "二分查找">二分查找</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/03/TS 深入/" >
-            
-                <span>TS深入</span>
-        </a>
-        <div class="abstract-content">
-            TypeScript深入理解，笔记
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
+        <div class="index-post-header">
+            <a class="abstract-title" href = "/2019/09/03/TS 深入/" >
+                
+                    <span>TS深入</span>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                    <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
     
 </div>
-            
+
+                
+            </div>
+        </div>
+        <!-- date  -->
+        <div class="abstract-date">
+            <span class="abstract-time">2019年09月03日</span>
+        </div>
+        <div class="abstract-content">
+            TypeScript深入理解，笔记
         </div>
     </article>
     
@@ -680,101 +376,38 @@
     </nav>
     
 </main>
+
             <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
     <!-- social  -->
-    
-    <div class="social">
-        
-    
-        
-            
-                <a href="mailto:xuyiyangwing@gmail.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/infiniteXyy" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/san-qian-yan-yan-huo/" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8930251/infinitexyy" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/infiniteX" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
-    </div>
-    
     <!-- powered by Hexo  -->
     <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+        <div>2019 <b>@infiniteX</b><span id="hexo-power"> with <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info"><a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+        </div>
     </div>
     <!-- 不蒜子  -->
     
     <div class="busuanzi-container">
     
-     
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    <span id="busuanzi_container_site_uv">访问用户: <span id="busuanzi_value_site_uv"></span> :)</span>
     
     </div>
     
 </footer>
+
     </div>
     <!-- toc -->
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+        <li class="sidebar-tab-archives"><span class="tab-name">归档</span></li>
+        <li class="sidebar-tab-tags"><span class="tab-name">标签</span></li>
+        <li class="sidebar-tab-categories"><span class="tab-name">分类</span></li>
     </ul>
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
@@ -902,312 +535,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 28
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -1243,42 +573,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/17</span><a class="archive-post-title" href= "/2019/09/17/算法题/最小的k个数/" >最小的K个数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2019/09/16/面经/Nvidia 笔试/" >英伟达Web笔试</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2019/09/16/算法题/滑动窗口最大值/" >滑动窗口最大值</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2019/09/16/算法题/数据流的中位数/" >数据流的中位数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2019/09/14/算法题/和为S且乘积最小的两个数/" >和为S且乘积最小的两个数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2019/09/14/算法题/丑数/" >丑数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2019/09/14/算法题/只出现一次的数/" >只出现一次的数</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/12</span><a class="archive-post-title" href= "/2019/09/12/算法题/旋转递增数列求最小值/" >旋转递增数列求最小值</a>
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2019/09/03/TS 深入/" >TS深入</a>
         </li>
     
     
@@ -1292,21 +592,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/13/算法题/栈的弹出顺序/" >栈的弹出顺序</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2019/09/03/TS 深入/" >TS深入</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/20/精品/搜索/" >暴力搜索</a>
         </li>
     
     
@@ -1334,50 +620,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/18/算法题/801.Minimum Swaps To Make Sequences Increasing/" >801.Minimum Swaps To Make Sequences Increasing</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/25</span><a class="archive-post-title" href= "/2019/08/25/算法题/445.Add Two Numbers II/" >445.Add Two Numbers II</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/25</span><a class="archive-post-title" href= "/2019/08/25/算法题/24.Swap Nodes in Pairs/" >24.Swap Nodes in Pairs</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/19</span><a class="archive-post-title" href= "/2019/08/19/算法题/167.Two Sum II - Input array is sorted/" >167.Two Sum II - Input array is sorted</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/19</span><a class="archive-post-title" href= "/2019/08/19/算法题/11.Container With Most Water/" >11.Container With Most Water</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/27/算法题/147.Insertion Sort List/" >147. Insertion Sort List</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/20/精品/二分/" >二分查找</a>
         </li>
     
     
@@ -1405,76 +648,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/27/算法题/148.Sort List/" >148. Sort List</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/20/精品/搜索/" >暴力搜索</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "/2019/08/18/算法题/790.Domino and Tromino Tiling/" >790.Domino and Tromino Tiling</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/15/算法题/不用四则运算做加法/" >不用四则运算做加法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/20/精品/二分/" >二分查找</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/09/21/精品/JS基础知识/" >JS基础知识</a>
         </li>
     
@@ -1485,31 +658,11 @@
     
         <span class="sidebar-tag-name" data-tags="学习笔记"><span class="iconfont-archer">&#xe606;</span>学习笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="双指针"><span class="iconfont-archer">&#xe606;</span>双指针</span>
+        <span class="sidebar-tag-name" data-tags="笔经"><span class="iconfont-archer">&#xe606;</span>笔经</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
-        <span class="sidebar-tag-name" data-tags="LeetCode"><span class="iconfont-archer">&#xe606;</span>LeetCode</span>
-    
-        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
-    
-        <span class="sidebar-tag-name" data-tags="动态规划"><span class="iconfont-archer">&#xe606;</span>动态规划</span>
-    
-        <span class="sidebar-tag-name" data-tags="位运算"><span class="iconfont-archer">&#xe606;</span>位运算</span>
-    
-        <span class="sidebar-tag-name" data-tags="剑指Offer"><span class="iconfont-archer">&#xe606;</span>剑指Offer</span>
-    
-        <span class="sidebar-tag-name" data-tags="堆"><span class="iconfont-archer">&#xe606;</span>堆</span>
-    
-        <span class="sidebar-tag-name" data-tags="分治"><span class="iconfont-archer">&#xe606;</span>分治</span>
-    
-        <span class="sidebar-tag-name" data-tags="二分查找"><span class="iconfont-archer">&#xe606;</span>二分查找</span>
-    
-        <span class="sidebar-tag-name" data-tags="队列"><span class="iconfont-archer">&#xe606;</span>队列</span>
-    
         <span class="sidebar-tag-name" data-tags="实验"><span class="iconfont-archer">&#xe606;</span>实验</span>
-    
-        <span class="sidebar-tag-name" data-tags="笔经"><span class="iconfont-archer">&#xe606;</span>笔经</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1549,7 +702,8 @@ jsonContent:
     <div class="sidebar-categories-list"></div>
 </div>
     </div>
-</div> 
+</div>
+
     <script>
     var siteMeta = {
         root: "/",
@@ -1576,7 +730,7 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-     
+    
     </body>
 </html>
 
