@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>InfiniteX</title>
+    <title>JS基础知识 · InfiniteX</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InfiniteX</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">JS基础知识</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InfiniteX</a>
 </header>
@@ -227,7 +238,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/user/erondu/1600x900)"></div>
@@ -236,8 +247,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            InfiniteX
-            <!-- 文章页  -->
+            JS基础知识
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Code Life Easy
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">748</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/21</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,403 +399,171 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第二次学习/" >
-            
-                <span>Webpack的第二次学习</span>
-        </a>
-        <div class="abstract-content">
-            本文承接于上一篇文章《webpack的第一次学习》，在那篇文章中，通过阅读文档学习了基本的webpack组成与其基本使用方法。这篇文章将尝试写一个简易版本的webpack(参考了这个视频)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>整理了一下自己不熟悉的几个点</p>
+<ul>
+<li>数据类型</li>
+<li>基本语法、控制流</li>
+<li>函数</li>
+<li>面向对象</li>
+<li>错误处理</li>
+<li>单线程</li>
+<li>测试</li>
+<li>ES6/ES7</li>
+<li>其它</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><code>typeof</code>：判断基本数据类型(null 也是 object)<br><code>instanceof</code>：<strong>判断具体是哪种对象</strong><br><code>number</code> <code>object</code> <code>string</code> <code>boolean</code> <code>undefined</code> <code>null</code> <code>symbol</code></p>
+<ul>
+<li>unicode、utf-8</li>
+<li><code>in</code>操作符与<code>hasOwnProperty</code></li>
+<li>Map、Set</li>
+<li>解构：默认值，多层解构，swap</li>
+</ul>
+<h3 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h3><ul>
+<li><code>interable</code>,<code>forEach</code>,<code>for…of…</code></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>变量作用域，var 互不影响、从内而外</li>
+<li>变量提升(可以访问，但是是<code>undefined</code>)</li>
+<li>window 全局作用域(NodeJS 是 global)</li>
+<li><code>this</code>与 strict mode 与<strong>执行栈</strong> <a href="https://www.zhihu.com/search?type=content&q=%E6%89%A7%E8%A1%8C%E6%A0%88" target="_blank" rel="noopener">知乎</a> ◦ this 绑定(对象或全局)<ul>
+<li>词法环境(变量映射、外部此法环境的引用)</li>
+<li>全局环境</li>
+<li>函数环境(arguments 对象）</li>
+<li>变量环境(属于词法环境，经用于存储 var 的绑定)</li>
+</ul>
+</li>
+<li>apply/call(参数的不同) <a href="https://github.com/lin-xin/blog/issues/7" target="_blank" rel="noopener">Github</a></li>
+<li>箭头函数的词法作用域</li>
+<li>生成器(yield) 与 ajax</li>
+<li>闭包：函数与函数中的变量 <a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">知乎</a> * 如何实现？堆</li>
+</ul>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
+<li>基本对象 Date_Reg_JSON<ul>
+<li>Date 在 JS 中月份从 0 开始</li>
+<li>Reg 用于 split 很方便</li>
+<li>Reg 还可以用来分组(使用括号)</li>
+<li><code>JSON.stringfy(object, replacer, space)</code></li>
+</ul>
+</li>
+<li>this，与运行上下文</li>
+<li>原型链，一个对象的原型指向另一个对象</li>
+<li>为原型增加方法，使用 prototype</li>
+<li>prototype vs<code>__proto__</code> <a href="https://www.zhihu.com/question/34183746" target="_blank" rel="noopener">知乎</a><ul>
+<li>prototype 是函数特有的对象，它只有一个属性 constructor，它的内容是函数自身</li>
+<li>proto 指向构造它的函数的 prototype</li>
+</ul>
+</li>
+<li>class</li>
+</ul>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><ul>
+<li>try catch finally * finally 中的内容即使 return 依然会运行到</li>
+<li>若抛出错误，会一直向上寻找 catch，直到 JavaScript 引擎</li>
+<li>异步操作需要在回调函数中捕获异常</li>
+</ul>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><ul>
+<li>JavaScript 是单线程的</li>
+<li>使用异步回调来增加异步任务的性能</li>
+<li>Event Loop * 执行栈 + 任务队列，当栈空的时候会去读取任务队列。</li>
+<li>NodeJS 的<code>process.nextTick</code> <a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">阮一峰</a></li>
+<li>Web Worker(Html5 的多线程，作为主线程的子线程)<ul>
+<li>执行的脚本必须来自网络</li>
+<li>通信必须通过消息(postMessage 发送，onMessage 接收) * 不能使用主线程的 DOM 对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ul>
+<li>Set, Map</li>
+<li>let</li>
+<li>const</li>
+<li>for … of …</li>
+<li>解构</li>
+<li>箭头函数</li>
+<li>yield</li>
+<li>class 继承(取代原来原型链的复杂方法)</li>
+<li>Promise</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (something) &#123;</span><br><span class="line">    resolve();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    reject();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Canvas</li>
+<li>import</li>
+</ul>
+<h3 id="ES7"><a href="#ES7" class="headerlink" title="ES7"></a>ES7</h3><ul>
+<li>async await</li>
+</ul>
+<h3 id="Node-JS"><a href="#Node-JS" class="headerlink" title="Node.JS"></a>Node.JS</h3><ul>
+<li>模块<ul>
+<li>module.exports 与 exports(后者只是前者最初的一个引用，最后看的还是 module.exports,好苦逼啊) <a href="https://juejin.im/post/597ec55a51882556a234fcef" target="_blank" rel="noopener">掘金</a></li>
+<li>模块的原理(闭包)</li>
+</ul>
+</li>
+<li>Fs(readFile, readFileSync)</li>
+<li>stream</li>
+<li>crypto(md5、AES、RSA……)</li>
+</ul>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><ul>
+<li>短路运算符 a || b (if a is null then b else a) a &amp;&amp; b (if a is null then null, else b)</li>
+<li><code>window</code> <code>navigator</code> <code>location</code> <code>screen</code><ul>
+<li>history</li>
+<li>Document * appendChild, insertBefore</li>
+</ul>
+</li>
+<li>表单<ul>
+<li>onSubmit 返回值</li>
+<li>Type submit reset * input hidden,没有 name 属性的不会被提交</li>
+</ul>
+</li>
+<li>AJAX 与 CORS<ul>
+<li>代理</li>
+<li>Flash</li>
+<li>JSONP(函数回调的方式，利用了 js 跨域脚本)</li>
+<li>CORS</li>
+<li>简单请求(GET、不使用 JSON 的 POST)<code>Access-Control-Allow-Origin</code></li>
+<li>发送<code>OPTIONS</code>请求，询问是否可以接受某种类型的请求</li>
+</ul>
+</li>
+</ul>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第一次学习/" >
-            
-                <span>Webpack的第一次学习</span>
-        </a>
-        <div class="abstract-content">
-            Webpack可能是现在使用范围最广的前端打包工具了。(另外也是面试题常考的内容之一了) 这篇文章记录了从零开始了解、学习webpack的过程，也不是说之前没有用过webpack啦，只不过那时候都是用的create-react-app或者vue init之类的cli工具，为了能够更加了解这些打包工具，所以我打算好好看一下webpack(之前挖的坑还没弄好QWQ)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/JS基础知识/" >
-            
-                <span>JS基础知识</span>
-        </a>
-        <div class="abstract-content">
-            整理了一下自己不熟悉的几个点
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/面经/腾讯笔试/" >
-            
-                <span>腾讯Web笔试</span>
-        </a>
-        <div class="abstract-content">
-            5道笔试题
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "笔经">笔经</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/二分/" >
-            
-                <span>二分查找</span>
-        </a>
-        <div class="abstract-content">
-            二分查找是针对有序数组的查找策略，其复杂度是log(n)。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/图/" >
-            
-                <span>图</span>
-        </a>
-        <div class="abstract-content">
-            要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/树/" >
-            
-                <span>树</span>
-        </a>
-        <div class="abstract-content">
-            二树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/动态规划/" >
-            
-                <span>动态规划</span>
-        </a>
-        <div class="abstract-content">
-            虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是减少重复性的运算。如何减少重复性运算呢？
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/搜索/" >
-            
-                <span>暴力搜索</span>
-        </a>
-        <div class="abstract-content">
-            搜索即遍历所有情况，找到正确答案。在很多情况下，搜索又被称作暴力算法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/算法题/最小的k个数/" >
-            
-                <span>最小的K个数</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "分治">分治</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= https://avatars2.githubusercontent.com/u/26314308 >
-    <div class="profile-name">InfiniteXyy</div>
-    
-    <div class="profile-signature">
-        to be a better programmer
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/09/21/精品/Webpack的第一次学习/" title= "Webpack的第一次学习">
+                    <div class="nextTitle">Webpack的第一次学习</div>
+                </a>
             
-                <a href="mailto:xuyiyangwing@gmail.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/20/面经/腾讯笔试/" title= "腾讯Web笔试">
+                    <div class="prevTitle">腾讯Web笔试</div>
+                </a>
             
-                <a href="//github.com/infiniteXyy" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/san-qian-yan-yan-huo/" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8930251/infinitexyy" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/infiniteX" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -835,6 +651,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制流"><span class="toc-number">2.</span> <span class="toc-text">控制流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象"><span class="toc-number">4.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理"><span class="toc-number">5.</span> <span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单线程"><span class="toc-number">6.</span> <span class="toc-text">单线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6"><span class="toc-number">7.</span> <span class="toc-text">ES6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES7"><span class="toc-number">8.</span> <span class="toc-text">ES7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-JS"><span class="toc-number">9.</span> <span class="toc-text">Node.JS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">10.</span> <span class="toc-text">其它</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1643,6 +1477,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

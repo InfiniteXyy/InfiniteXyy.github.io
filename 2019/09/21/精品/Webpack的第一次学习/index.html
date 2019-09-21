@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>InfiniteX</title>
+    <title>Webpack的第一次学习 · InfiniteX</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InfiniteX</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Webpack的第一次学习</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InfiniteX</a>
 </header>
@@ -227,7 +238,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/user/erondu/1600x900)"></div>
@@ -236,8 +247,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            InfiniteX
-            <!-- 文章页  -->
+            Webpack的第一次学习
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,51 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Code Life Easy
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/21</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,403 +401,127 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第二次学习/" >
-            
-                <span>Webpack的第二次学习</span>
-        </a>
-        <div class="abstract-content">
-            本文承接于上一篇文章《webpack的第一次学习》，在那篇文章中，通过阅读文档学习了基本的webpack组成与其基本使用方法。这篇文章将尝试写一个简易版本的webpack(参考了这个视频)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Webpack 可能是现在使用范围最广的前端打包工具了。(另外也是面试题常考的内容之一了)<br>这篇文章记录了从零开始了解、学习 webpack 的过程，也不是说之前没有用过 webpack 啦，只不过那时候都是用的 create-react-app 或者 vue init 之类的 cli 工具，为了能够更加了解这些打包工具，所以我打算好好看一下 webpack(之前挖的坑还没弄好 QWQ)</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>了解<ul>
+<li>这部分介绍 webpack 的主要概念、使用场景</li>
+<li><strong>最后会用一句话对 webpack 进行总结</strong></li>
+</ul>
+</li>
+<li>学习<ul>
+<li>这部分介绍 webpack 基本配置</li>
+<li>如何使用 loader、插件、环境 * <strong>最后会手动地新建一个</strong>React<strong>的项目</strong></li>
+</ul>
+</li>
+<li>细节(这部分会在 webpack(二)记录)<ul>
+<li>这部分介绍 webpack 的使用细节</li>
+<li>涉及一小部分的原理 * <strong>最后会尝试实现一个最最 easy 的打包工具</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h2><p>你是否遇到过这样的情况？当你想开发一个项目。起初，你只有一个 html 文件，一切看起来都是那么简单轻松，但当代码行数逐渐变多的时候，在一个文件里面写代码已经完全吃不消了。于是，你开始把代码分散在不同的文件里，例如，样式放到 css，脚本放到 js 里，在项目比较小的时候，这似乎也没什么问题，但随着项目的变大，你的 html 里链接了各种脚本，这使你维护起来即为麻烦。<br>要是能有一个工具，能自动帮我把分散的脚本整合起来就好啦，同时我也不需要考虑引入的顺序 OMG。<br>Webpack 就是这样一个工具。<br>简单而言，它做的就是将分离的模块打包在一起的功能。这里的模块包括 css 文件、js 脚本、图片等等。<br><strong>它有以下两个核心概念</strong>，大概就那么简单！</p>
+<ul>
+<li>入口起点、出口<ul>
+<li>从哪里开始读取模块</li>
+<li>整合出来的<em>bundles</em>导出到哪里</li>
+</ul>
+</li>
+<li>loader<ul>
+<li>将不同类型的文件（根据文件名判断）都转化为 webpack 认识的模块</li>
+<li>引用官网的一句话<blockquote>
+<p>“嘿，webpack 编译器，当你碰到「在 require()/import 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先<strong>使用</strong>raw-loader 转换一下。”</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>另外，webpack 还提供<strong>插件</strong>的功能，可以在打包的同时对代码进行各种操作，(例如压缩等等)，也可以设置不同<strong>模式</strong>，让 webpack 根据开发环境的不同选择不同的策略。<br><strong>一句话总结</strong><br><strong>webpack</strong>是一个用来将多个文件打包的工具，可以设置<strong>loader</strong>来对不同种类的文件打包，同时可以用<strong>插件</strong>扩展 webpack 的打包功能。</p>
+<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><p>那么现在已经了解了基本用途啦！<br>看看怎么使用吧。<br><strong>安装</strong><br>和很多其他工具一样，Webpack 是一个 Node.JS 的 package，由于 Webpack 是开发过程中的打包工具，因此保存为 devDependance。<br>(Webpack 4 + 需要安装 webpack-cli，这样可以在命令行中运行 Webpack)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack webpack-cli -D</span><br><span class="line"><span class="comment"># 或者npm</span></span><br><span class="line">npm install —save-dev webpack webpack-cli</span><br></pre></td></tr></table></figure>
+
+<p><strong>尝试</strong><br>创建一个 html 文件 index.html，和一个 js 文件 src/index.js(这是默认的入口出口)，试试看打包吧。运行 npx webpack。<br>这样脚本就被打包到一个 main.js 文件中啦(默认的出口)，如果你有其他依赖的话，webpack 也会自动把它们打包进 main.js。<br>有趣的是，webpack 自带了对 import、export 的支持，所以你可以不需要写 require 啦，其它 es6 特性，需要 babel 等转译器的帮助。</p>
+<p><strong>配置</strong><br>如果只有这样的功能，那么 webpack 还远远达不到它自称高可配置性的要求。<br>事实上，大部分（所有）的项目都需要配置文件来管理。<br>他就是大名鼎鼎的 webpack.config.js，它是一个 js 文件，所以，需要通过 module.exports 来导出配置对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果没有配置文件的话，就是这样的配置</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(‘path’);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: ‘./src/index.js’,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: ‘main.js’,</span><br><span class="line">    path: path.resolve(__dirname, ‘dist’)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Loader</strong><br>Webpack 默认只能加载 js 模块，对于其它（例如 css）文件，需要对应的 loader 来加载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add style-loader css-loader -D</span><br><span class="line"><span class="comment"># style-loader处理import和require的加载</span></span><br><span class="line"><span class="comment"># css-loader将样式添加到页面</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，修改配置文件，向 module.rules 中添加属性，注意这里有个小坑的地方，loader 是按顺序加载的，所以 style-loader 需要在 css-loader 之前。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">      use: [</span><br><span class="line">        ‘style-loader’,</span><br><span class="line">        ‘css-loader’</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其它 loader 还有 file-loader(加载图片、字体等)，csv-loader xml-loader 等等<br><strong>插件</strong><br>使用插件减少很多繁杂的劳动。例如：作为单页面应用入口的 html 文件，其实并没有什么内容，但是如果因为模块入口的名字发生改变而不得不去修改 html 代码的话，是非常影响体验的。<br>这里可以安装 HtmlWebpackPlugin 自动根据模板生成网页文件，或是 CleanWebpackPlugin 来清理 dist 中的过期内容。<br><strong>必要的杂项</strong></p>
+<ul>
+<li>devtool: ‘inline-source-map’ 用来定位打包后的代码属于哪个文件</li>
+<li>开发热更新<ul>
+<li><code>webpack —watch</code>可以观察所有的依赖文件是否发生了修改</li>
+<li><code>webpack-dev-server</code>提供一个 web 服务器，自动对内容的变更进行跟踪 * <code>webpack-dev-middleware</code>提供一个中间件，将 webpack 打包的内容传递到例如 express 的服务器中</li>
+</ul>
+</li>
+<li>模块热替换<br><strong>接下来，可以尝试开始构建一个 React 项目了</strong><br>首先是新建 node 项目，安装 webpack、babel、webpack-dev-server 等开发依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir hello-react</span><br><span class="line"><span class="built_in">cd</span> hello-react</span><br><span class="line">yarn init</span><br><span class="line"><span class="comment"># 先把之前所学的弄上吧！</span></span><br><span class="line">yarn add -D webpack webpack-cli webpack-dev-server</span><br><span class="line"><span class="comment"># 基本上都会用上的插件</span></span><br><span class="line">yarn add -D clean-webpack-plugin html-webpack-plugin</span><br></pre></td></tr></table></figure>
+
+<p>编辑配置文件和 package.json(主要是 build 和 start 的指令，在此不再赘述啦)<br>其中 index.html 就是一个只要一个 id 为 root 的 div 的模板。用于之后 react 绑定 component</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个简单的配置文件</span></span><br><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(‘path’);</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(‘html-webpack-plugin’);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: ‘./index.js’,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: ‘bundle.js’,</span><br><span class="line">    path: path.resolve(__dirname, ‘dist’)</span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: ‘./dist’</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      template: ‘./index.html’</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>运行 yarn start，应该就可以正确运行啦。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">“scripts”: &#123;</span><br><span class="line">  “start”: “webpack-dev-server —open”,</span><br><span class="line">  “build”: “webpack”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来就要开始安装 react 了，这还是我第一次不用 cra 呢，有点小紧张。<br>首先安装必要的依赖(React 和 React-dom 是一起安装的，前者是核心库，后者用于操作 dom，虽然说通常只会用到 ReactDom.render。。。)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add react react-dom <span class="comment"># 这次不是开发依赖了，不需要参数-D</span></span><br></pre></td></tr></table></figure>
+
+<p>尝试像 create-react-app 一样地写一个入口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> ‘react’;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> ‘react-dom’;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> ‘./src/App’;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById(‘root’));</span></span><br></pre></td></tr></table></figure>
+
+<p>编译错误！jsx 语法不能被识别，然后 class 作为 es6 模块也没法被浏览器理解，还需要 babel 等解析器的支持！<br>安装 loader 和 preset 和 babelcore</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add -D babel-core babel-loader babel-preset-env babel-preset-react <span class="comment"># 并不是完全体，但应该够用</span></span><br></pre></td></tr></table></figure>
+
+<p>loader 用于 webpack，preset 用于 babel 翻译 react 语法，和 es6，es7<br>安装完以后，设置 babelrc，并在 webpack 中加入 loader</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// babel.rc或者在package.json</span><br><span class="line">&#123; “presets”: [“env”, “react”] &#125;</span><br><span class="line"></span><br><span class="line">// webpack.config.js</span><br><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    …</span><br><span class="line">    &#123; test: /\.js$/, use: ‘babel-loader’ &#125;</span><br><span class="line">    …</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再试试看，是不是能运行了呢？<br>以上就是一个简单的 React 项目。当然还有很多可以优化的地方，生产开发环境优化程度分离、模块热替换。等等。另外，下次试试看使用 TypeScript 吧！😁</p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>Will be available soon before 2018/4/10.</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第一次学习/" >
-            
-                <span>Webpack的第一次学习</span>
-        </a>
-        <div class="abstract-content">
-            Webpack可能是现在使用范围最广的前端打包工具了。(另外也是面试题常考的内容之一了) 这篇文章记录了从零开始了解、学习webpack的过程，也不是说之前没有用过webpack啦，只不过那时候都是用的create-react-app或者vue init之类的cli工具，为了能够更加了解这些打包工具，所以我打算好好看一下webpack(之前挖的坑还没弄好QWQ)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/JS基础知识/" >
-            
-                <span>JS基础知识</span>
-        </a>
-        <div class="abstract-content">
-            整理了一下自己不熟悉的几个点
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/面经/腾讯笔试/" >
-            
-                <span>腾讯Web笔试</span>
-        </a>
-        <div class="abstract-content">
-            5道笔试题
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "笔经">笔经</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/二分/" >
-            
-                <span>二分查找</span>
-        </a>
-        <div class="abstract-content">
-            二分查找是针对有序数组的查找策略，其复杂度是log(n)。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/图/" >
-            
-                <span>图</span>
-        </a>
-        <div class="abstract-content">
-            要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/树/" >
-            
-                <span>树</span>
-        </a>
-        <div class="abstract-content">
-            二树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/动态规划/" >
-            
-                <span>动态规划</span>
-        </a>
-        <div class="abstract-content">
-            虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是减少重复性的运算。如何减少重复性运算呢？
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/搜索/" >
-            
-                <span>暴力搜索</span>
-        </a>
-        <div class="abstract-content">
-            搜索即遍历所有情况，找到正确答案。在很多情况下，搜索又被称作暴力算法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/算法题/最小的k个数/" >
-            
-                <span>最小的K个数</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "分治">分治</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= https://avatars2.githubusercontent.com/u/26314308 >
-    <div class="profile-name">InfiniteXyy</div>
-    
-    <div class="profile-signature">
-        to be a better programmer
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/09/21/精品/Webpack的第二次学习/" title= "Webpack的第二次学习">
+                    <div class="nextTitle">Webpack的第二次学习</div>
+                </a>
             
-                <a href="mailto:xuyiyangwing@gmail.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/21/精品/JS基础知识/" title= "JS基础知识">
+                    <div class="prevTitle">JS基础知识</div>
+                </a>
             
-                <a href="//github.com/infiniteXyy" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/san-qian-yan-yan-huo/" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8930251/infinitexyy" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/infiniteX" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -835,6 +609,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#了解"><span class="toc-number">2.</span> <span class="toc-text">了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习"><span class="toc-number">3.</span> <span class="toc-text">学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#细节"><span class="toc-number">4.</span> <span class="toc-text">细节</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1643,6 +1435,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

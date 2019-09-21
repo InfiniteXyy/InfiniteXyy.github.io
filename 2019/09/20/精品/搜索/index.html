@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>InfiniteX</title>
+    <title>暴力搜索 · InfiniteX</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InfiniteX</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">暴力搜索</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InfiniteX</a>
 </header>
@@ -227,7 +238,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/user/erondu/1600x900)"></div>
@@ -236,8 +247,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            InfiniteX
-            <!-- 文章页  -->
+            暴力搜索
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,51 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                Code Life Easy
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/20</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,403 +401,96 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第二次学习/" >
-            
-                <span>Webpack的第二次学习</span>
-        </a>
-        <div class="abstract-content">
-            本文承接于上一篇文章《webpack的第一次学习》，在那篇文章中，通过阅读文档学习了基本的webpack组成与其基本使用方法。这篇文章将尝试写一个简易版本的webpack(参考了这个视频)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>搜索即遍历所有情况，找到正确答案。在很多情况下，搜索又被称作暴力算法。<br>它们都有以下特征：</p>
+<ul>
+<li>需要枚举<strong>所有的情况</strong></li>
+<li>有一个<strong>判断是否为解</strong>的方法</li>
+</ul>
+<p>下面将从几个具体的类型，来介绍如何使用暴力搜索。这些类型分别对应 LeetCode 题目分类，Search 页内的题目。</p>
+<h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><p>回溯是暴力搜索常用的算法，在暴力搜索中，回溯通常有以下步骤：</p>
+<ol>
+<li>判断该数组是否为解(若为解则退出)</li>
+<li>将某个元素放到数组</li>
+<li>递归(使用该数组)</li>
+<li>将当前内容弹出<br>这样就可以遍历所有的情况了。</li>
+</ol>
+<h2 id="组合-conbination"><a href="#组合-conbination" class="headerlink" title="组合(conbination)"></a>组合(conbination)</h2><p>这类题通常要求将一些选项<strong>组合</strong>，选择出可行的解。例如：3 个不同的数字组合为 9 的方法……对这类问题，可以使用<strong>回溯</strong>的方法。</p>
+<p>例如 _求幂集- 这道题，其递归伪代码表示为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">ans = []</span><br><span class="line"><span class="function">function <span class="title">backtrack</span><span class="params">(curList, from)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 不需要判断，全部都可以加入</span></span><br><span class="line">  ans.add(curList.clone())</span><br><span class="line">  <span class="keyword">for</span> (let i = from; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    curList.push(nums[i]);</span><br><span class="line">    <span class="comment">// 2 (这里每次将起始点加1，这样就可以保证不重复)</span></span><br><span class="line">    backtrack(curList, i + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 3</span></span><br><span class="line">    curList.remove(curList.length - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>tips：如果输入数组有重复的元素，且要求解集不能有重复，可以先对候选数字排序，然后，加入以下判断语句来过滤掉重复的解，来保证独立性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 除去第一次，后面数字的如果跟前面的一样，那直接pass</span></span><br><span class="line"><span class="comment">// 对于一串一样的数字，只要选第一个就可以了</span></span><br><span class="line"><span class="keyword">if</span> (i != from &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="排列-permutation"><a href="#排列-permutation" class="headerlink" title="排列(permutation)"></a>排列(permutation)</h2><p>这类题通常要求将输入数组排列，获得正确的解（即不同的顺序是不一样的）。它与组合问题区别在于，每一次都需要从 0 开始遍历数组，因此为了防止元素重复使用，往往会额外使用一个 used 数组，来记录每一个数字的使用情况。这类暴力求解的复杂度通常是<code>n!</code>，因此如果看到<code>1 &lt;= A.length &lt;= 10</code>的 Note，可以考虑暴力算法，更大的话，性能会太差。</p>
+<p>例如：给你一个集合，让你输出它不同排列顺序下的情况。{1,2,3}就是[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]</p>
+<p>要解决这种问题同样可以使用递归回溯的方法。Java 代码可以表述为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;Integer&gt; cur, <span class="keyword">boolean</span>[] used)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (cur.size() == nums.length) ans.add(<span class="keyword">new</span> ArrayList(cur));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (cur.size() &lt; nums.length) &#123;</span><br><span class="line">    <span class="comment">// 每次从0开始遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (used[i]) <span class="keyword">continue</span>;</span><br><span class="line">      cur.add(nums[i]);</span><br><span class="line">      used[i] = <span class="keyword">true</span>; <span class="comment">// 设为使用过</span></span><br><span class="line">      backtrack(cur);</span><br><span class="line">      cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">      used[i] = <span class="keyword">false</span>; <span class="comment">// 设为未使用</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>tips: 如果输入元素有重复的内容，解法跟上题类似，都需要先排序，然后进行如下判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果是第一个元素，那么可以直接加入</span></span><br><span class="line"><span class="comment">// 如果这是重复出现的元素，且之前跟它一样的元素未被使用，这说明：之前的元素必定已经加入过一遍了，这些情况必定已经计算过了。</span></span><br><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; A[i] == A[i-<span class="number">1</span>] &amp;&amp;!used[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="深度优先-DFS"><a href="#深度优先-DFS" class="headerlink" title="深度优先(DFS)"></a>深度优先(DFS)</h2><p>DFS 是一个非常大的题目领域，包括上文的排列、组合，都可以认作 DFS。它们可以通过走一条路径，走不通就回退来尝试所有的情况，如果不在乎很高的时间损耗，可以使用 DFS。例如：</p>
+<ul>
+<li>括号的配对(左括号的数量影响下一步的决策)</li>
+<li>数独、八皇后(格子里的内容会影响其他各自的选则)<br>它的特点在于，会一路尝试到最后，不撞南墙不死心，然后再猪不会退，最后枚举得到正确解。<br>例如八皇后问题回溯部分的 java 代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> row)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 若尝试到了最后一行，则获得了一个解</span></span><br><span class="line">  <span class="keyword">if</span> (row == n) &#123;</span><br><span class="line">    ans++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 判断这行里面可以放在哪些位置，逐步尝试，并递归</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; n; col++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (valid(row, col)) &#123;</span><br><span class="line">      graph[row][col] = <span class="keyword">true</span>;</span><br><span class="line">      backtrack(row + <span class="number">1</span>);</span><br><span class="line">      graph[row][col] = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>tips：DFS 问题可以通过减枝来优化，即那些显然无解的路径可以避免去走。</p>
+<h2 id="广度优先-BFS"><a href="#广度优先-BFS" class="headerlink" title="广度优先(BFS)"></a>广度优先(BFS)</h2><p>BFS 和 DFS，我认为本质上没有区别，都是为了遍历全部的情况。但遍历的顺序有所区别，DFS 是一条路走到底，而 BFS 则会一层层地遍历，因此，BFS 更适合求层数。</p>
+<p>由于 BFS 在遍历完成之前会把所有的内容放在栈中，因此，BFS 空间复杂度更高。</p>
+<p>一个单向 BFS 的伪代码可以表示为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let step = <span class="number">0</span>;</span><br><span class="line">let queue = [start];</span><br><span class="line"><span class="keyword">while</span> queue <span class="keyword">is</span> <span class="keyword">not</span> empty:</span><br><span class="line">	step++;</span><br><span class="line">	let size = queue.size();</span><br><span class="line">	<span class="keyword">while</span> size-- &gt; <span class="number">0</span>:</span><br><span class="line">  	let cur = queue.pop();</span><br><span class="line">    new_nodes = expand(cur);</span><br><span class="line">    <span class="keyword">if</span> goal <span class="keyword">in</span> new_nodes <span class="keyword">return</span> step + <span class="number">1</span></span><br><span class="line">    queue.append_all(new_nodes)</span><br><span class="line"><span class="keyword">return</span> not_found</span><br></pre></td></tr></table></figure>
+
+<p>另外，还有双向 BFS，如果明确起始终止的话，从两边开始判定可以显著地减少复杂度，目前先挖个坑。</p>
+<h2 id="划分-Partition"><a href="#划分-Partition" class="headerlink" title="划分(Partition)"></a>划分(Partition)</h2><p>划分也是暴力搜索的一种类型。例如，把一个列表划分为<strong>sum</strong>相同的子列表。在不用 DP 的情况下，可以进行暴力枚举+回溯：试着把一个元素放到某个列表里，如果不行，就把它删除。</p>
+<p>为了能够尽可能优化性能，可以按照题目意思进行减枝。</p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p><em>2018-3-16</em><br>更新”回溯”部分整理（Search 部分的第一行）</p>
+<p><em>2018-3-17</em><br>将”回溯”更名为”组合”，将”置换”更名为”排列”，更新”排列”部分整理(Search 部分的第二行)，修改”组合“部分，八皇后问题不能算组合</p>
+<p><em>2018-3-18</em><br>更新”DFS“部分整理(Search 部分的第 3-5 行)，修改”搜索”相关描述</p>
+<p><em>2018-3-21</em><br>更新”BFS”部分整理</p>
+<p><em>2018-3-21</em><br>更新”partition”部分整理，BFS 有部分内容暂未完成</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/Webpack的第一次学习/" >
-            
-                <span>Webpack的第一次学习</span>
-        </a>
-        <div class="abstract-content">
-            Webpack可能是现在使用范围最广的前端打包工具了。(另外也是面试题常考的内容之一了) 这篇文章记录了从零开始了解、学习webpack的过程，也不是说之前没有用过webpack啦，只不过那时候都是用的create-react-app或者vue init之类的cli工具，为了能够更加了解这些打包工具，所以我打算好好看一下webpack(之前挖的坑还没弄好QWQ)
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "实验">实验</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/21/精品/JS基础知识/" >
-            
-                <span>JS基础知识</span>
-        </a>
-        <div class="abstract-content">
-            整理了一下自己不熟悉的几个点
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/面经/腾讯笔试/" >
-            
-                <span>腾讯Web笔试</span>
-        </a>
-        <div class="abstract-content">
-            5道笔试题
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "笔经">笔经</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/二分/" >
-            
-                <span>二分查找</span>
-        </a>
-        <div class="abstract-content">
-            二分查找是针对有序数组的查找策略，其复杂度是log(n)。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/图/" >
-            
-                <span>图</span>
-        </a>
-        <div class="abstract-content">
-            要解决图的问题，基本上无非是通过DFS、BFS来遍历，或利用一些固有的算法（dijkstra等）。图是一类综合性很强的问题，但同时，图的题目也普遍有一些现成的模板，可以直接套用。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/树/" >
-            
-                <span>树</span>
-        </a>
-        <div class="abstract-content">
-            二树的题目实现起来比较简单（通常使用递归），难的是如何根据题目意思找到合适的递推函数，将大的问题一点点变小。以下列举了一些在刷题过程中遇到的树的类型。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/动态规划/" >
-            
-                <span>动态规划</span>
-        </a>
-        <div class="abstract-content">
-            虽然动态规划这名字听起来挺玄乎的，但在我看来，动态规划无非是在暴力搜索下的一种优化算法罢了。核心是减少重复性的运算。如何减少重复性运算呢？
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/20/精品/搜索/" >
-            
-                <span>暴力搜索</span>
-        </a>
-        <div class="abstract-content">
-            搜索即遍历所有情况，找到正确答案。在很多情况下，搜索又被称作暴力算法。
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习笔记">学习笔记</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/算法题/最小的k个数/" >
-            
-                <span>最小的K个数</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "剑指Offer">剑指Offer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "分治">分治</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= https://avatars2.githubusercontent.com/u/26314308 >
-    <div class="profile-name">InfiniteXyy</div>
-    
-    <div class="profile-signature">
-        to be a better programmer
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/09/20/精品/动态规划/" title= "动态规划">
+                    <div class="nextTitle">动态规划</div>
+                </a>
             
-                <a href="mailto:xuyiyangwing@gmail.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/17/算法题/最小的k个数/" title= "最小的K个数">
+                    <div class="prevTitle">最小的K个数</div>
+                </a>
             
-                <a href="//github.com/infiniteXyy" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-            
-                <a href="https://www.zhihu.com/people/san-qian-yan-yan-huo/" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://stackoverflow.com/users/8930251/infinitexyy" class="iconfont-archer stack-overflow" target="_blank" title=stack-overflow></a>
-            
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="https://www.v2ex.com/member/infiniteX" class="iconfont-archer v2ex" target="_blank" title=v2ex></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -835,6 +578,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯"><span class="toc-number">1.</span> <span class="toc-text">回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合-conbination"><span class="toc-number">2.</span> <span class="toc-text">组合(conbination)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排列-permutation"><span class="toc-number">3.</span> <span class="toc-text">排列(permutation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度优先-DFS"><span class="toc-number">4.</span> <span class="toc-text">深度优先(DFS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#广度优先-BFS"><span class="toc-number">5.</span> <span class="toc-text">广度优先(BFS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#划分-Partition"><span class="toc-number">6.</span> <span class="toc-text">划分(Partition)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新日志"><span class="toc-number">7.</span> <span class="toc-text">更新日志</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1643,6 +1404,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
