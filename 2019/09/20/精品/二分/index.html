@@ -367,25 +367,31 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>二分查找是针对有序数组的查找策略，其复杂度是 log(n)。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。</p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>二分查找是针对有序数组的查找策略，其复杂度是log(n)。但实际上也不仅于此，事实上，二分查找同贪心一样，是平常人们就会使用的方法，跟数组类似的有”查字典”，”找自己学号的位置”。另外，也可以利用二分来调温，热了就变冷一点……其实也是二分的方法。</p>
 <p>可见，二分查找能解决的问题通常有以下特征</p>
 <ul>
 <li>需要找到一个特定的值</li>
 <li>这个值处在一个范围内</li>
 <li><strong>有一个指标来表示这个值是偏大了还是偏小了</strong></li>
 </ul>
-<p><strong>写成 Python 代码的二分查找</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">array = [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取两头闭区间</span></span><br><span class="line">first = <span class="number">0</span></span><br><span class="line">last = len(array) - <span class="number">1</span></span><br><span class="line"><span class="comment"># 求下界</span></span><br><span class="line"><span class="comment"># 直到first == last才会结束</span></span><br><span class="line"><span class="keyword">while</span> (first &lt;= last):</span><br><span class="line">  mid = first + (last - fisrt) // <span class="number">2</span> <span class="comment"># 防止数字溢出</span></span><br><span class="line">  <span class="keyword">if</span> (array[mid] &lt; target): first = mid + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>: last = mid - <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> first</span><br></pre></td></tr></table></figure>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>一定要用自己理解的手法来写，如果只是盲目记住公式的话，迟早会忘记的！<br>我的理解可以<strong>写成伪代码的二分查找</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">array = [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取左开右闭区间：理解为在一个范围中进行查找</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = len(array)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直到left &gt;= right才会结束：理解为范围为空，或者只有一个内容</span></span><br><span class="line"><span class="keyword">while</span> (left &lt; right): </span><br><span class="line">  mid = (left + right) // <span class="number">2</span> <span class="comment"># 取中点：找到偏左的的位置</span></span><br><span class="line">  <span class="keyword">if</span> (array[mid] &gt; target): right = mid</span><br><span class="line">  <span class="keyword">else</span>: left = mid + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> left <span class="comment"># 这是第一个满足判断条件的坐标（或者整个列表都不满足）</span></span><br><span class="line"><span class="comment"># 判断条件是array[mid] &gt; target，可以任意更换</span></span><br></pre></td></tr></table></figure>
 
-<p>可能有的变化</p>
-<ul>
+<h3 id="细节上可以优化的地方："><a href="#细节上可以优化的地方：" class="headerlink" title="细节上可以优化的地方："></a>细节上可以优化的地方：</h3><ul>
+<li><strong>取中点</strong>的时候可以使用<code>first + (last - first) // 2</code>的形式，这样可以保证不会出现数字越界的情况（一般不会遇到这么大的上下界）</li>
+<li>当target等于mid的时候可以立即返回</li>
+</ul>
+<h3 id="可能有的变化"><a href="#可能有的变化" class="headerlink" title="可能有的变化"></a>可能有的变化</h3><ul>
 <li>重复数字求<strong>上下界</strong></li>
-<li>有序数列在一个点<strong>翻转</strong> * 这里可以对翻转情况进行分类讨论(左右边哪边翻转了)</li>
+<li>有序数列在一个点<strong>翻转</strong><ul>
+<li>这里可以对翻转情况进行分类讨论(左右边哪边翻转了)</li>
+</ul>
+</li>
 <li>二维元素的二分查找</li>
 <li>二分查找的判断条件复杂</li>
 </ul>
-<p><strong>总结</strong></p>
-<p>二分查找主要是要找到可以二分的元素，需要注意的是二分的边界值，比方说＞还是 ≥，</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>二分查找主要是要找到可以二分的元素，需要注意的是二分的边界值，比方说＞还是≥，</p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2019.9.25<br>更新部分内容描述<br>更新自己理解的语法</p>
 
     </article>
     <!-- license  -->
@@ -465,7 +471,7 @@ top:50vh;
         <div class="toc-catalog">
             <span>目录</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#细节上可以优化的地方："><span class="toc-number">2.1.</span> <span class="toc-text">细节上可以优化的地方：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可能有的变化"><span class="toc-number">2.2.</span> <span class="toc-text">可能有的变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">2.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新日志"><span class="toc-number">3.</span> <span class="toc-text">更新日志</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
