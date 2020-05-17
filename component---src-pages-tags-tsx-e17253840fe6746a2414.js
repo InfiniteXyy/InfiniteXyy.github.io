@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{xSjX:function(t,e,a){"use strict";a.r(e),a.d(e,"query",(function(){return r}));a("q1tI");var n=a("H8eV"),i=a("9Dj+"),c=a("qKvR");e.default=function(t){var e=t.data.site.siteMetadata.title;return Object(c.c)(i.a,{title:e},Object(c.c)(n.a,{title:"Tags"}))};var r="1097489062"}}]);
+//# sourceMappingURL=component---src-pages-tags-tsx-e17253840fe6746a2414.js.map
