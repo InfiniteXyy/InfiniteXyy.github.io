@@ -3,7 +3,13 @@ module.exports = {
     title: `XYY的博客`,
     author: {
       name: `Yiyang Xu`,
-      summary: `summary`,
+      summary: `learning...`,
+      social: {
+        github: "InfiniteXyy",
+        zhihu: "san-qian-yan-yan-huo",
+        stackoverflow: "8930251",
+        mail: "xuyiyangwing@gmail.com",
+      },
     },
     description: "Personal blog of YiyangXu",
     siteUrl: `https://infinitexyy.github.io`,
@@ -30,7 +36,7 @@ module.exports = {
         fonts: [
           {
             family: `Cairo`,
-            variant: [`400`],
+            variant: ["400"],
           },
         ],
       },

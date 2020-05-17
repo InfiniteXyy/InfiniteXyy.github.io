@@ -6,44 +6,61 @@ import SEO from "../components/seo";
 import typography from "../utils/typography";
 import styled from "@emotion/styled";
 
-const Header = styled.header`
+const { rhythm } = typography;
+const Container = styled.div`
+  margin-top: ${rhythm(1)};
+`;
+const Article = styled.article`
+  display: flex;
+  justify-content: space-between;
+  font-size: 120%;
+  margin: 0 0 ${rhythm(0.6)} ${rhythm(2)};
   & a {
+    color: unset;
     text-decoration: none;
+    &:hover {
+      color: cornflowerblue;
+    }
   }
+  & small {
+    opacity: 0.4;
+    font-weight: bold;
+  }
+`;
+
+const Year = styled.code`
+  font-weight: bold;
+  font-size: 120%;
+  display: block;
+  margin-bottom: ${rhythm(0.6)};
 `;
 const Posts = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
+  let lastYear = null;
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Posts" />
-      <div style={{ marginTop: typography.rhythm(1) }}>
+      <Container>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
+          const currentYear = node.frontmatter.date.split(",")[1].trim();
           return (
-            <article key={node.fields.slug}>
-              <Header>
-                <h3
-                  style={{
-                    marginBottom: typography.rhythm(1 / 4),
-                  }}
-                >
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h3>
+            <React.Fragment key={node.fields.slug}>
+              {currentYear !== lastYear &&
+                (() => {
+                  lastYear = currentYear;
+                  return <Year>{currentYear}</Year>;
+                })()}
+              <Article>
+                <Link to={node.fields.slug}>{title}</Link>
                 <small>{node.frontmatter.date}</small>
-              </Header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
+              </Article>
+            </React.Fragment>
           );
         })}
-      </div>
+      </Container>
     </Layout>
   );
 };
@@ -65,7 +82,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY MMMM DD")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
           }

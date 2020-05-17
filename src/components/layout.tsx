@@ -1,10 +1,11 @@
-import React, { FC } from "react";
-import { Link } from "gatsby";
+import React, { FC, useEffect, useState } from "react";
+import { Link as GatsbyLink } from "gatsby";
 import typography from "../utils/typography";
-import { css } from "@emotion/core";
-import styled from "@emotion/styled";
-
+import { Global, css } from "@emotion/core";
+import styled, { darkTheme, lightTheme, useTheme } from "../utils/theme";
 const { rhythm } = typography;
+import { FaMoon, FaSun } from "react-icons/fa";
+import { ThemeProvider } from "emotion-theming";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -14,6 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   & > header {
+    color: ${(props) => props.theme.colors.primary};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,14 +28,29 @@ const Container = styled.div`
     text-align: center;
   }
 `;
-const LinkStyle = css`
+
+const NavRight = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: unset;
-  margin-right: ${rhythm(1)};
   transition: 100ms;
   &:hover {
-    color: #498fe1;
+    color: ${({ theme }) => theme.colors.highlight};
   }
+`;
+
+const Sun = styled(FaSun)`
+  opacity: 0.4;
+  cursor: pointer;
+`;
+
+const Moon = styled(FaMoon)`
+  opacity: 0.4;
+  cursor: pointer;
 `;
 
 interface LayoutProps {
@@ -42,26 +59,41 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ title, children }) => {
+  const [theme, toggleTheme] = useTheme();
+  const [needTransition, setNeedTransition] = useState(false);
+  useEffect(() => {
+    // 防止切换页面时发生闪烁，仅当点击设置时，才会加入transition
+    if (!needTransition) setNeedTransition(true);
+  }, [theme, needTransition]);
+  const currentTheme = theme === "dark" ? darkTheme : lightTheme;
   return (
-    <Container>
-      <header>
-        <Link css={LinkStyle} to={`/`}>
-          {title}
-        </Link>
-        <div>
-          <Link css={LinkStyle} to={`/posts`}>
-            Posts
-          </Link>
-          <Link css={LinkStyle} to={`/tags`}>
-            Tags
-          </Link>
-        </div>
-      </header>
-      <main>{children}</main>
-      <footer>
-        © YiyangXu {new Date().getFullYear()} | Powered by <b>Gatsby</b>
-      </footer>
-    </Container>
+    <ThemeProvider theme={currentTheme}>
+      <Container>
+        <Global
+          styles={css`
+            body {
+              ${needTransition && "transition: 300ms"};
+              background: ${currentTheme.colors.background};
+              color: ${currentTheme.colors.primary};
+            }
+          `}
+        />
+        <header>
+          <Link to="/">{title}</Link>
+          <NavRight>
+            <Link to="/posts">Posts</Link>
+            <Link style={{ margin: "0 " + rhythm(1) }} to="/tags">
+              Tags
+            </Link>
+            {theme === "dark" ? <Sun onClick={toggleTheme} /> : <Moon onClick={toggleTheme} />}
+          </NavRight>
+        </header>
+        <main>{children}</main>
+        <footer>
+          © YiyangXu {new Date().getFullYear()} | Powered by <b>Gatsby</b>
+        </footer>
+      </Container>
+    </ThemeProvider>
   );
 };
 
