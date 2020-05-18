@@ -11,8 +11,12 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Title = styled.h3`
+const Title = styled.code`
   margin-top: ${rhythm(1)};
+  font-weight: bold;
+  font-size: 120%;
+  display: block;
+  margin-bottom: ${rhythm(0.6)};
 `;
 
 const Tag = ({ title }: { title: string }) => {
@@ -23,7 +27,7 @@ const Tag = ({ title }: { title: string }) => {
         cursor: pointer;
         user-select: none;
         &:hover {
-          border-bottom: 2px solid gray;
+          border-bottom: 3px solid gray;
         }
       `}
     >

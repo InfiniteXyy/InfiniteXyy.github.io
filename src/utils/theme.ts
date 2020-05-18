@@ -1,25 +1,4 @@
-import { useState, useEffect } from "react";
 import styled, { CreateStyled } from "@emotion/styled";
-
-/**
- * A hook to get and update the current theme for dark mode
- * @returns [theme, toggleTheme] - [current theme, function to toggle theme]
- */
-type ThemeType = "dark" | "light";
-export function useTheme(): [ThemeType, () => void] {
-  const storedTheme = typeof window !== "undefined" && window.localStorage.getItem("theme");
-  const [theme, setTheme] = useState<ThemeType>((storedTheme as ThemeType) || "light");
-  const toggleTheme = () =>
-    setTheme((prevTheme) => {
-      return prevTheme === "light" ? "dark" : "light";
-    });
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("theme", theme);
-    }
-  }, [theme]);
-  return [theme, toggleTheme];
-}
 
 interface Theme {
   colors: {
@@ -42,7 +21,7 @@ export const lightTheme: Theme = {
 
 export const darkTheme: Theme = {
   colors: {
-    highlight: "#3673b1",
+    highlight: "#70a6e7",
     primary: "rgba(255,255,255,0.87)",
     secondary: "rgba(255,255,255,0.75)",
     background: "#292a2d",

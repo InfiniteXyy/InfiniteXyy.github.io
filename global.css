@@ -1,0 +1,15 @@
+body.light-mode {
+  background-color: #fafafa;
+  color: #4a4a4a;
+}
+body.dark-mode {
+  background-color: #292a2d;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}

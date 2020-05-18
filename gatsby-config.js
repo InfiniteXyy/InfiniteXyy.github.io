@@ -71,6 +71,7 @@ module.exports = {
         icon: `content/assets/favicon.png`,
       },
     },
+    `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,

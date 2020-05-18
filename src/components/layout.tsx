@@ -2,28 +2,32 @@ import React, { FC, useEffect, useState } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import typography from "../utils/typography";
 import { Global, css } from "@emotion/core";
-import styled, { darkTheme, lightTheme, useTheme } from "../utils/theme";
+import styled, { darkTheme, lightTheme } from "../utils/theme";
+import useDarkMode from "use-dark-mode";
 const { rhythm } = typography;
 import { FaMoon, FaSun } from "react-icons/fa";
 import { ThemeProvider } from "emotion-theming";
 
 const Container = styled.div`
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
   max-width: 1000px;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
   display: flex;
   flex-direction: column;
   & > header {
-    color: ${(props) => props.theme.colors.primary};
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   & > main {
     flex-grow: 1;
+    flex-basis: auto;
+    flex-shrink: 0;
   }
   & > footer {
+    padding-top: ${rhythm(1.5)};
     font-size: 85%;
     text-align: center;
   }
@@ -37,9 +41,9 @@ const NavRight = styled.div`
 const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: unset;
-  transition: 100ms;
+  border-bottom: 3px solid transparent;
   &:hover {
-    color: ${({ theme }) => theme.colors.highlight};
+    border-bottom: 3px solid ${({ theme }) => theme.colors.highlight};
   }
 `;
 
@@ -59,13 +63,13 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ title, children }) => {
-  const [theme, toggleTheme] = useTheme();
+  const { value: darkMode, toggle } = useDarkMode();
   const [needTransition, setNeedTransition] = useState(false);
   useEffect(() => {
     // 防止切换页面时发生闪烁，仅当点击设置时，才会加入transition
     if (!needTransition) setNeedTransition(true);
-  }, [theme, needTransition]);
-  const currentTheme = theme === "dark" ? darkTheme : lightTheme;
+  }, [darkMode, needTransition]);
+  const currentTheme = darkMode ? darkTheme : lightTheme;
   return (
     <ThemeProvider theme={currentTheme}>
       <Container>
@@ -73,8 +77,6 @@ const Layout: FC<LayoutProps> = ({ title, children }) => {
           styles={css`
             body {
               ${needTransition && "transition: 300ms"};
-              background: ${currentTheme.colors.background};
-              color: ${currentTheme.colors.primary};
             }
           `}
         />
@@ -85,7 +87,7 @@ const Layout: FC<LayoutProps> = ({ title, children }) => {
             <Link style={{ margin: "0 " + rhythm(1) }} to="/tags">
               Tags
             </Link>
-            {theme === "dark" ? <Sun onClick={toggleTheme} /> : <Moon onClick={toggleTheme} />}
+            {darkMode ? <Sun onClick={toggle} /> : <Moon onClick={toggle} />}
           </NavRight>
         </header>
         <main>{children}</main>

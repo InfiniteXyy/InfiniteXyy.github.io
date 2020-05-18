@@ -11,7 +11,7 @@ const Container = styled.div`
     margin: ${rhythm(0.75)} 0;
     & > span {
       display: inline-block;
-      width: ${rhythm(3)};
+      width: ${rhythm(2.5)};
     }
     & > a {
       cursor: pointer;
