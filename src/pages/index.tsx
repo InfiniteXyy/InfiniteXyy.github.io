@@ -9,6 +9,7 @@ import GatsbyImage from "gatsby-image";
 
 import typography from "../utils/typography";
 import styled from "../utils/theme";
+
 const { rhythm } = typography;
 const Container = styled.div`
   height: 100%;
@@ -21,11 +22,13 @@ const Icons = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${rhythm(1)};
+
   & svg {
     margin: 0 ${rhythm(0.3)};
     font-size: 30px;
     color: ${({ theme }) => theme.colors.secondary};
     cursor: pointer;
+
     &:hover {
       color: ${({ theme }) => theme.colors.highlight};
     }
@@ -35,6 +38,7 @@ const Icons = styled.div`
 const Image = styled(GatsbyImage)`
   cursor: pointer;
   transition: 240ms ease-in-out;
+
   &:hover {
     transform: scale(1.1);
   }
@@ -47,13 +51,13 @@ const BlogIndex = ({ data }) => {
     <Layout title={siteTitle}>
       <SEO />
       <Container>
-        <div>
+        <div style={{ textAlign: "center" }}>
           <Link to={"/posts"}>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author.name}
               imgStyle={{
-                borderRadius: `50%`,
+                borderRadius: `50%`
               }}
             />
           </Link>
@@ -64,11 +68,11 @@ const BlogIndex = ({ data }) => {
             <a href={"https://www.zhihu.com/people/" + author.social.zhihu}>
               <Zhihu />
             </a>
-            <a href={"mailto: " + author.social.mail}>
-              <Mail />
-            </a>
             <a href={"https://stackoverflow.com/users/" + author.social.stackoverflow}>
               <StackOverflow />
+            </a>
+            <a href={"mailto: " + author.social.mail}>
+              <Mail />
             </a>
           </Icons>
         </div>

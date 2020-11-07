@@ -1,6 +1,6 @@
 import styled, { CreateStyled } from "@emotion/styled";
 
-interface Theme {
+export interface Theme {
   colors: {
     highlight: string;
     primary: string;
