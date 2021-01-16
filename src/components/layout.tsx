@@ -1,13 +1,14 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import typography from "../utils/typography";
-import { Global, css } from "@emotion/core";
+import { css, Global } from "@emotion/core";
 import styled, { darkTheme, lightTheme } from "../utils/theme";
 import useDarkMode from "use-dark-mode";
-
-const { rhythm } = typography;
 import { FaMoon, FaSun } from "react-icons/fa";
 import { ThemeProvider } from "emotion-theming";
+
+const { rhythm } = typography;
+
 
 const Container = styled.div`
   margin: 0 auto;
@@ -56,23 +57,34 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const Sun = styled(FaSun)`
-  opacity: 0.4;
-  cursor: pointer;
+const IconWrapper = styled.div`
+  width: 18px;
+  height: 18px;
+
+  svg {
+    opacity: 0.4;
+    cursor: pointer;
+  }
 `;
 
-const Moon = styled(FaMoon)`
-  opacity: 0.4;
-  cursor: pointer;
-`;
 
 interface LayoutProps {
   title: string;
   location?: Location;
 }
 
-const Layout: FC<LayoutProps> = ({ title, children }) => {
+const DarkModeIcon = () => {
   const { value: darkMode, toggle } = useDarkMode();
+  const [loaded, setHasLoaded] = useState(false);
+
+  // react icons 似乎不能正确hydrate，因此加载完js文件后强制刷新
+  useEffect(() => void (setHasLoaded(true)), []);
+
+  return <IconWrapper onClick={toggle}>{!loaded ? null : (darkMode ? <FaSun /> : <FaMoon />)}</IconWrapper>;
+};
+
+const Layout: FC<LayoutProps> = ({ title, children }) => {
+  const { value: darkMode } = useDarkMode();
   const [needTransition, setNeedTransition] = useState(false);
 
   useEffect(() => {
@@ -97,7 +109,7 @@ const Layout: FC<LayoutProps> = ({ title, children }) => {
             <Link to="/projects">Projects</Link>
             <Link to="/posts">Posts</Link>
             <Link to="/tags">Tags</Link>
-            {darkMode ? <Sun onClick={toggle} /> : <Moon onClick={toggle} />}
+            <DarkModeIcon />
           </NavRight>
         </header>
         <main>{children}</main>
