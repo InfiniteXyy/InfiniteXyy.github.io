@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div className="bg-neutral-100">
       <Parallax className="top-0 left-0" pages={2}>
-        <ParallaxLayer className="flex flex-col items-center justify-center text-center" offset={0} speed={2.5}>
+        <ParallaxLayer className="flex flex-col items-center justify-center text-center" offset={0} speed={0.1}>
           <h1 className="text-3xl font-bold text-gray-700 underline underline-offset-4">
             <PrintableText>Hi there, My name is Yiyang</PrintableText>
           </h1>
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             </a>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer className="bg-slate-500" offset={1} speed={2} />
+        <ParallaxLayer className="bg-slate-500" offset={1} speed={1.7} />
         <ParallaxLayer className="flex items-center justify-center text-white" offset={1} speed={0.5}>
           <Projects />
         </ParallaxLayer>
