@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <Parallax className="top-0 left-0" pages={2}>
         <ParallaxLayer className="flex flex-col items-center justify-center text-center" offset={0} speed={0.1}>
           <h1 className="text-3xl font-bold text-gray-700 underline underline-offset-4">
-            <PrintableText>Hi there, My name is Yiyang</PrintableText>
+            <PrintableText>Hi there, I am Xyy</PrintableText>
           </h1>
           <div className="mt-10 flex items-center gap-2 text-2xl text-gray-500">
             <a href="https://github.com/infinitexyy">
