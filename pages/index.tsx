@@ -1,14 +1,17 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { PrintableText } from "components/printable-text";
-import { Projects } from "components/projects";
+import { IRepo, Repos } from "components/repos";
 import { FaStackOverflow as StackOverflow } from "react-icons/fa";
 import { AiFillGithub as Github, AiFillMail as Mail, AiFillZhihuSquare as Zhihu } from "react-icons/ai";
-import type { NextPage } from "next";
+// import type { GetStaticProps, NextPage } from "next";
+// import { Octokit } from "@octokit/rest";
 
-const Home: NextPage = () => {
+export default function Home(props: { repos: IRepo[] }) {
+  const { repos } = props;
   return (
     <div className="bg-neutral-100">
       <Parallax className="top-0 left-0" pages={2}>
+        <ParallaxLayer className="relative border-4 border-slate-600" offset={0} speed={0} />
         <ParallaxLayer className="flex flex-col items-center justify-center text-center" offset={0} speed={0.1}>
           <h1 className="text-3xl font-bold text-gray-700 underline underline-offset-4">
             <PrintableText>Hi there, I am Xyy</PrintableText>
@@ -28,13 +31,18 @@ const Home: NextPage = () => {
             </a>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer className="bg-slate-500" offset={1} speed={1.7} />
-        <ParallaxLayer className="flex items-center justify-center text-white" offset={1} speed={0.5}>
-          <Projects />
+        <ParallaxLayer className="bg-slate-600" factor={1} offset={1} speed={0} />
+        <ParallaxLayer className="flex items-center justify-center text-white" factor={1} offset={1} speed={0.5}>
+          <div className="text-2xl">Currently Work In Progress</div>
         </ParallaxLayer>
       </Parallax>
     </div>
   );
-};
+}
 
-export default Home;
+// const octokit = new Octokit();
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const repos = await octokit.rest.repos.listForUser({ username: "infinitexyy", type: "owner", sort: "updated" });
+//   return { props: { repos: repos.data || [] } };
+// };
