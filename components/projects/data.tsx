@@ -13,6 +13,7 @@ import {
   FaBook,
 } from "react-icons/fa";
 import { SiAdafruit } from "react-icons/si";
+import { BsBoxArrowInUpRight } from "react-icons/bs";
 import { CgShoppingBag } from "react-icons/cg";
 
 export const catagories: ICategory[] = [
@@ -39,7 +40,7 @@ export const catagories: ICategory[] = [
       },
       {
         name: "hamburger",
-        description: "[Developing] 📕 A declarative UI framework, with ",
+        description: "[Developing] 📕 A declarative UI framework",
         url: "https://github.com/InfiniteXyy/hamburger",
         icon: <FaHamburger />,
       },
@@ -60,6 +61,13 @@ export const catagories: ICategory[] = [
   {
     name: "Websites / Apps / Plugins",
     projects: [
+      {
+        name: "Fallacy List",
+        description: "A Website listing all kinds of fallacies, in Chinese",
+        url: "https://github.com/InfiniteXyy/list-of-fallacies",
+        icon: <BsBoxArrowInUpRight />,
+        badge: "new",
+      },
       {
         name: "Working Time",
         description: "A Website for the great working-time project",
