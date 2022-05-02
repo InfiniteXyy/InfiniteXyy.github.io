@@ -1,4 +1,5 @@
 import React from "react";
+import { StackItem, StackTag } from "./stack-tag";
 
 export type IProject = {
   name: string;
@@ -6,6 +7,7 @@ export type IProject = {
   url: string;
   icon?: React.ReactNode;
   badge?: string;
+  stack?: StackItem[];
 };
 
 export function ProjectItem(props: { project: IProject }) {
@@ -17,8 +19,8 @@ export function ProjectItem(props: { project: IProject }) {
       rel="noreferrer"
       target="_blank"
     >
-      <style jsx>{`
-        a:hover > .__badge:last-of-type {
+      <style global jsx>{`
+        a:hover [class*=opacity] {
           opacity: 1;
         }
       `}</style>
@@ -26,9 +28,16 @@ export function ProjectItem(props: { project: IProject }) {
         {project.name}
       </div>
       <div className="my-2 text-sm">{project.description}</div>
-      {project.icon && <div className="absolute top-2 right-2 text-6xl opacity-5">{project.icon}</div>}
+      {project.stack && (
+        <div className="flex flex-wrap space-x-1">
+          {project.stack?.map((stack) => (
+            <StackTag key={stack} type={stack} />
+          ))}
+        </div>
+      )}
+      {project.icon && <div className="absolute top-2 right-2 text-6xl !opacity-5">{project.icon}</div>}
       {project.badge && (
-        <div className="__badge absolute top-0 right-0 w-10 rounded-bl bg-green-600 text-center text-sm font-bold opacity-75">
+        <div className="absolute top-0 right-0 w-10 rounded-bl bg-green-600 text-center text-sm font-bold opacity-75">
           {project.badge}
         </div>
       )}

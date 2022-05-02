@@ -1,21 +1,5 @@
 import { ICategory } from "./project-category";
 
-import {
-  FaRegLightbulb,
-  FaRegClock,
-  FaCandyCane,
-  FaHamburger,
-  FaLayerGroup,
-  FaDatabase,
-  FaRegFile,
-  FaCode,
-  FaLanguage,
-  FaBook,
-} from "react-icons/fa";
-import { SiAdafruit } from "react-icons/si";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { CgShoppingBag } from "react-icons/cg";
-
 export const catagories: ICategory[] = [
   {
     name: "Fun Projects",
@@ -24,37 +8,43 @@ export const catagories: ICategory[] = [
         name: "Ideas",
         description: "A collection of my strange but may be useful ideas",
         url: "https://xyynext.xyz/ideas/index.html",
-        icon: <FaRegLightbulb />,
+        icon: <div className="i-[fa-lightbulb-o]" />,
+        stack: ["vitepress", "doc"],
       },
       {
         name: "unplugin-pomodoro",
         description: "A plugin to put a pmodoro timer on your web page in development",
         url: "https://github.com/InfiniteXyy/unplugin-pomodoro",
-        icon: <FaRegClock />,
+        icon: <div className="i-[fa-solid-clock]" />,
+        stack: ["svelte", "plugin"],
       },
       {
         name: "babel-plugin-react-label-sugar",
         description: "A simple React Ref Sugar just for fun :) 😄",
         url: "https://github.com/InfiniteXyy/babel-plugin-react-label-sugar",
-        icon: <FaCandyCane />,
+        icon: <div className="i-[fa-solid-candy-cane]" />,
+        stack: ["React", "plugin"],
       },
       {
         name: "hamburger",
         description: "[Developing] 📕 A declarative UI framework",
         url: "https://github.com/InfiniteXyy/hamburger",
-        icon: <FaHamburger />,
+        icon: <div className="i-[fa-solid-hamburger]" />,
+        stack: ["framework"],
       },
       {
         name: "Micro Use",
         description: "A composition API plugin for Vercel's Micro",
         url: "https://github.com/InfiniteXyy/micro-use",
-        icon: <FaDatabase />,
+        icon: <div className="i-[fa-solid-database]" />,
+        stack: ["backend", "plugin"],
       },
       {
         name: "Just Layout",
         description: "[Developing] The EveryLayout implementation",
         url: "https://github.com/InfiniteXyy/just-layout",
-        icon: <FaLayerGroup />,
+        icon: <div className="i-[fa-solid-layer-group]" />,
+        stack: ["CSS", "Demo"],
       },
     ],
   },
@@ -65,50 +55,63 @@ export const catagories: ICategory[] = [
         name: "Fallacy List",
         description: "A Website listing all kinds of fallacies, in Chinese",
         url: "https://github.com/InfiniteXyy/list-of-fallacies",
-        icon: <BsBoxArrowInUpRight />,
+        icon: <div className="i-[fa-arrow-circle-o-left]" />,
         badge: "new",
+        stack: ["Vue3", "Nuxt3"],
       },
       {
         name: "Working Time",
         description: "A Website for the great working-time project",
         url: "https://working-time-react.vercel.app",
-        icon: <CgShoppingBag />,
+        icon: <div className="i-[fa-shopping-bag]" />,
+        stack: ["React"],
       },
       {
         name: "Resumee",
         description: "A website for you to create your resume by markdown",
         url: "https://github.com/InfiniteXyy/resumee",
-        icon: <FaRegFile />,
+        icon: <div className="i-[fa-solid-file]" />,
+        stack: ["React"],
       },
       {
         name: "PlayCode",
         description: "run C++/Python/TypeScript in browser",
         url: "https://github.com/InfiniteXyy/playcode",
-        icon: <FaCode />,
+        icon: <div className="i-[fa-solid-code]" />,
+        stack: ["React"],
       },
       {
         name: "live-chinese-converter-ext",
         description: "A browser extension to convert traditional/mandarin chinese in time",
         url: "https://github.com/InfiniteXyy/live-chinese-converter-ext",
-        icon: <FaLanguage />,
+        icon: <div className="i-[fa-solid-language]" />,
+        stack: ["Browser Plugin"],
       },
       {
         name: "Spreader",
         description: "A cross-platform reader, which can read anything with user-defined spiders",
         url: "https://github.com/InfiniteXyy/spreader",
-        icon: <FaBook />,
+        icon: <div className="i-[fa-solid-book]" />,
+        stack: ["React Native"],
       },
       {
         name: "pokemmo-fruit",
         description: "A pokemmo fruit management tool based on Tkinter",
         url: "https://github.com/InfiniteXyy/pokemmo-fruit",
-        icon: <SiAdafruit />,
+        icon: <div className="i-[simple-icons-adafruit]" />,
+        stack: ["Python"],
       },
     ],
   },
   {
-    name: "React Ecosystem",
+    name: "Frontend Ecosystem",
     projects: [
+      {
+        name: "tailwindcss-iconify",
+        description: "A tailwindcss plugin for iconify, a copy of @unocss/preset-icon",
+        url: "https://github.com/InfiniteXyy/tailwindcss-iconify",
+        badge: "new",
+      },
       {
         name: "React Global Component",
         description: "A lib for creating shared stateful components in react",
