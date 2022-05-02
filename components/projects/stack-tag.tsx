@@ -32,5 +32,7 @@ const classNameMap: Record<StackItem, string> = {
 };
 
 export function StackTag(props: { type: StackItem }) {
-  return <div className={`rounded px-1 text-xs font-medium opacity-0 ${classNameMap[props.type]}`}>{props.type}</div>;
+  return (
+    <div className={`rounded px-1 text-xs font-medium md:opacity-0 ${classNameMap[props.type]}`}>{props.type}</div>
+  );
 }
