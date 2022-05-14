@@ -52,6 +52,13 @@ export const catagories: ICategory[] = [
     name: "Websites / Apps / Plugins",
     projects: [
       {
+        name: "EasyLab. GTD",
+        description: "Easy Get Thing Done app for the web",
+        url: "https://github.com/InfiniteXyy/easy-gtd",
+        badge: "WIP",
+        stack: ["React"],
+      },
+      {
         name: "Fallacy List",
         description: "A Website listing all kinds of fallacies, in Chinese",
         url: "https://github.com/InfiniteXyy/list-of-fallacies",
@@ -152,6 +159,12 @@ export const catagories: ICategory[] = [
   {
     name: "Templates",
     projects: [
+      {
+        name: "NextJS Starter Lite",
+        description: "⚛ A starter template for NextJS, inspired by vitesse",
+        url: "https://github.com/InfiniteXyy/nextjs-starter-lite",
+        badge: "new",
+      },
       {
         name: "SolidJS Starter Lite",
         description: "⚛ A starter template for SolidJS, inspired by vitesse",
