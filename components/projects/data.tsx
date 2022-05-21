@@ -52,10 +52,17 @@ export const catagories: ICategory[] = [
     name: "Websites / Apps / Plugins",
     projects: [
       {
-        name: "EasyLab. GTD",
+        name: "Process Killer",
+        description: "A user friendly Developer Tool for killing processes",
+        url: "https://process.xyynext.xyz/",
+        badge: "new",
+        stack: ["React", "Rust"],
+      },
+      {
+        name: "Gtd",
         description: "Easy Get Thing Done app for the web",
         url: "https://github.com/InfiniteXyy/easy-gtd",
-        badge: "WIP",
+        badge: "new",
         stack: ["React"],
       },
       {
@@ -63,7 +70,6 @@ export const catagories: ICategory[] = [
         description: "A Website listing all kinds of fallacies, in Chinese",
         url: "https://github.com/InfiniteXyy/list-of-fallacies",
         icon: <div className="i-[fa-arrow-circle-o-left]" />,
-        badge: "new",
         stack: ["Vue3", "Nuxt3"],
       },
       {
@@ -144,6 +150,12 @@ export const catagories: ICategory[] = [
   {
     name: "Developer Tools",
     projects: [
+      {
+        name: "get-app-icon",
+        description: "Unified get app icon cli based on Rust, C# and Swift",
+        url: "",
+        badge: "TODO",
+      },
       {
         name: "yuml-typescript-helper",
         description: "🍦 A TypeScript utility for yuml.me (generate UML)",

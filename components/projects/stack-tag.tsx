@@ -12,9 +12,11 @@ export type StackItem =
   | "doc"
   | "svelte"
   | "plugin"
-  | "Python";
+  | "Python"
+  | "Rust";
 
 const classNameMap: Record<StackItem, string> = {
+  Rust: "bg-orange-500 text-white",
   Demo: "bg-green-500 text-white",
   Vue3: "bg-green-500 text-white",
   Nuxt3: "bg-white text-green-500",
