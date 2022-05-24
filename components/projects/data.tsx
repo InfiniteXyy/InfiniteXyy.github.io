@@ -154,7 +154,7 @@ export const catagories: ICategory[] = [
         name: "get-app-icon",
         description: "Unified get app icon cli based on Rust, C# and Swift",
         url: "",
-        badge: "TODO",
+        badge: "WIP",
       },
       {
         name: "yuml-typescript-helper",

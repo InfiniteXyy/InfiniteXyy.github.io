@@ -1,4 +1,4 @@
-import { IProject, ProjectItem } from "./project-item";
+import { IProject, ProjectItem } from './project-item';
 
 export type ICategory = {
   name: string;
@@ -10,7 +10,10 @@ export function Category(props: { category: ICategory }) {
 
   return (
     <div className="mx-auto w-[948px] max-w-full overflow-auto p-4">
-      <h3 className="my-4 text-xl font-medium">{category.name}</h3>
+      <div className="mb-4 flex items-center space-x-1 font-bold text-neutral-500 dark:text-neutral-400">
+        <div className="i-[mdi-chevron-right]" />
+        <span>{category.name}</span>
+      </div>
       <div className="mx-auto grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
         {category.projects.map((project) => (
           <ProjectItem key={project.name} project={project} />
