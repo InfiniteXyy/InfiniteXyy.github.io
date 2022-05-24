@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-[800px] py-5 px-5 leading-9 md:py-20">
+      <div className="mx-auto max-w-[800px] bg-neutral-50 py-5 px-5 leading-9 dark:bg-neutral-900 md:py-20">
         <h1 className="mb-4 text-2xl font-bold">Frontend Engineer</h1>
         <ul>
           <li>
@@ -35,7 +35,7 @@ export default function About() {
           ))}
         </div>
         <h1 className="mb-4 mt-10 text-2xl font-bold">Working Experience</h1>
-        <ul className="children:flex leading-5 children:mb-4">
+        <ul className="leading-5 children:mb-4 children:flex">
           <li>
             <div>
               <div>2020.10 - *</div>
