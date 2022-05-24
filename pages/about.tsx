@@ -5,7 +5,7 @@ export default function About() {
     <>
       <Header />
       <div className="mx-auto max-w-[800px] py-5 px-5 leading-9 md:py-20">
-        <h1 className="mb-4 text-3xl font-bold">Frontend Engineer</h1>
+        <h1 className="mb-4 text-2xl font-bold">Frontend Engineer</h1>
         <ul>
           <li>
             📫 How to reach me:{' '}
@@ -16,7 +16,7 @@ export default function About() {
           <li>😊 Love JavaScript/TypeScript and React.js</li>
           <li>🦀 Try to learn Rust, CDRT and many other cool things</li>
         </ul>
-        <h1 className="mb-4 mt-10 text-3xl font-bold">My major Stacks</h1>
+        <h1 className="mb-4 mt-10 text-2xl font-bold">My major Stacks</h1>
         <div className="flex flex-wrap gap-3 text-3xl children:inline-block children:rounded-2xl children:bg-neutral-100 children:p-6 dark:children:bg-neutral-800">
           {[
             <div key="javascript" className="i-[logos-javascript]" />,
@@ -34,14 +34,20 @@ export default function About() {
             <div key={index}>{ele}</div>
           ))}
         </div>
-        <h1 className="mb-4 mt-10 text-3xl font-bold">Working Experience</h1>
-        <ul className="children:flex">
+        <h1 className="mb-4 mt-10 text-2xl font-bold">Working Experience</h1>
+        <ul className="children:flex leading-5 children:mb-4">
           <li>
-            2020.10 - *<small className="ml-4">(Frontend Developer)</small> <strong className="ml-auto">LeetCode</strong>
+            <div>
+              <div>2020.10 - *</div>
+              <div className="text-sm opacity-60">(Frontend Developer)</div>
+            </div>
+            <strong className="ml-auto">LeetCode</strong>
           </li>
           <li>
-            <span className="whitespace-nowrap overflow-hidden text-ellipsis">2019.7-2020.10</span>{' '}
-            <small className="ml-1 overflow-hidden text-ellipsis whitespace-nowrap">(Intern/Frontend Developer)</small>{' '}
+            <div>
+              <div>2019.7 - 2020.10</div>
+              <div className="text-sm opacity-60">(Intern/Frontend Developer)</div>
+            </div>
             <strong className="ml-auto">Trip.com</strong>
           </li>
         </ul>
