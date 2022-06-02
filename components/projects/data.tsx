@@ -62,7 +62,6 @@ export const catagories: ICategory[] = [
         name: "Gtd",
         description: "Easy Get Thing Done app for the web",
         url: "https://github.com/InfiniteXyy/easy-gtd",
-        badge: "new",
         stack: ["React"],
       },
       {
@@ -154,7 +153,7 @@ export const catagories: ICategory[] = [
         name: "get-app-icon",
         description: "Unified get app icon cli based on Rust, C# and Swift",
         url: "",
-        badge: "WIP",
+        badge: "TBD",
       },
       {
         name: "yuml-typescript-helper",
@@ -172,10 +171,15 @@ export const catagories: ICategory[] = [
     name: "Templates",
     projects: [
       {
+        name: "React Native Starter Lite",
+        description: "⚛ A starter template for React Native",
+        url: "https://github.com/InfiniteXyy/react-native-starter-lite",
+        badge: "new",
+      },
+      {
         name: "NextJS Starter Lite",
         description: "⚛ A starter template for NextJS, inspired by vitesse",
         url: "https://github.com/InfiniteXyy/nextjs-starter-lite",
-        badge: "new",
       },
       {
         name: "SolidJS Starter Lite",
