@@ -17,9 +17,8 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.1.11
   react: ^18.1.0
   react-dom: ^18.1.0
-  tailwind-children: ^0.5.0
   tailwind-scrollbar: ^1.3.1
-  tailwindcss: ^3.0.24
+  tailwindcss: ^3.1.1
   tailwindcss-iconify: ^0.0.3
   typescript: 4.7.2
 
@@ -42,10 +41,9 @@ devDependencies:
   prettier: 2.6.2
   prettier-plugin-organize-imports: 2.3.4_prettier@2.6.2+typescript@4.7.2
   prettier-plugin-tailwindcss: 0.1.11_prettier@2.6.2
-  tailwind-children: 0.5.0
   tailwind-scrollbar: 1.3.1
-  tailwindcss: 3.0.24
-  tailwindcss-iconify: 0.0.3_tailwindcss@3.0.24
+  tailwindcss: 3.1.1
+  tailwindcss-iconify: 0.0.3_tailwindcss@3.1.1
   typescript: 4.7.2
 
 packages:
@@ -529,12 +527,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /bindings/1.5.0:
-    resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
-    dependencies:
-      file-uri-to-path: 1.0.0
-    dev: true
-
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
     dependencies:
@@ -652,15 +644,6 @@ packages:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
 
-  /deasync/0.1.26:
-    resolution: {integrity: sha512-YKw0BmJSWxkjtQsbgn6Q9CHSWB7DKMen8vKrgyC006zy0UZ6nWyGidB0IzZgqkVRkOglAeUaFtiRTeLyel72bg==}
-    engines: {node: '>=0.11.0'}
-    requiresBuild: true
-    dependencies:
-      bindings: 1.5.0
-      node-addon-api: 1.7.2
-    dev: true
-
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
@@ -698,11 +681,11 @@ packages:
     dev: true
 
   /defined/1.0.0:
-    resolution: {integrity: sha1-yY2bzvdWdBiOEQlpFRGZ45sfppM=}
+    resolution: {integrity: sha512-Y2caI5+ZwS5c3RiNDJ6u53VhQHv+hHKwhkI1iHvceKUHw9Df6EK2zRLfjejRgMuCuxK7PfSWIMwWecceVvThjQ==}
     dev: true
 
-  /detective/5.2.0:
-    resolution: {integrity: sha512-6SsIx+nUUbuK0EthKjv0zrdnajCCXVYGmbYYiYjFVpzcjwEs/JMDZ8tPRG29J/HhN56t3GJp2cGSWDRjjot8Pg==}
+  /detective/5.2.1:
+    resolution: {integrity: sha512-v9XE1zRnz1wRtgurGu0Bs8uHKFSTdteYZNbIPFVhUZ39L/S79ppMpdmVOZAnoz1jfEFodc48n6MX483Xo3t1yw==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     dependencies:
@@ -1087,10 +1070,6 @@ packages:
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
       flat-cache: 3.0.4
-    dev: true
-
-  /file-uri-to-path/1.0.0:
-    resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
     dev: true
 
   /fill-range/7.0.1:
@@ -1623,10 +1602,6 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /node-addon-api/1.7.2:
-    resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
-    dev: true
-
   /node-releases/2.0.4:
     resolution: {integrity: sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==}
     dev: true
@@ -1817,6 +1792,23 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pify/2.3.0:
+    resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /postcss-import/14.1.0_postcss@8.4.14:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.14
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.0
+    dev: true
+
   /postcss-js/4.0.0_postcss@8.4.14:
     resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==}
     engines: {node: ^12 || ^14 || >= 16}
@@ -1957,6 +1949,12 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
+  /read-cache/1.0.0:
+    resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
+    dependencies:
+      pify: 2.3.0
+    dev: true
+
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -1980,12 +1978,6 @@ packages:
   /regexpp/3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
-    dev: true
-
-  /require-esm-in-cjs/0.1.0:
-    resolution: {integrity: sha512-cvUbHfMLrZ0ELkNFJ8jxfCMOPBOSKgt2Vr5j5XU1WrFCXVTDWJNIIkERU1YcVk/KlENrjq5F1jvj1KNnkFKB1Q==}
-    dependencies:
-      deasync: 0.1.26
     dev: true
 
   /resolve-from/4.0.0:
@@ -2156,43 +2148,34 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwind-children/0.5.0:
-    resolution: {integrity: sha512-erFCoS3v7beWuuJ9WdTeG+ZVL0SQrQ8gVxvx0zByYqhfXyPMYSCUNjA/RzYan0HGT/ejPayaCOH4zdXGN9A5IQ==}
-    dependencies:
-      require-esm-in-cjs: 0.1.0
-      tailwindcss: 3.0.24
-    transitivePeerDependencies:
-      - ts-node
-    dev: true
-
   /tailwind-scrollbar/1.3.1:
     resolution: {integrity: sha512-FeYuLxLtCRMO4PmjPJCzm5wQouFro2BInZXKPxqg54DR/55NAHoS8uNYWMiRG5l6qsLkWBfVEM34gq2XAQUwVg==}
     dependencies:
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
     transitivePeerDependencies:
       - ts-node
     dev: true
 
-  /tailwindcss-iconify/0.0.3_tailwindcss@3.0.24:
+  /tailwindcss-iconify/0.0.3_tailwindcss@3.1.1:
     resolution: {integrity: sha512-yL9y6WriS3QuYtJoKS39bsp+AGsBu3Y/49T3tO4f43tQx/Ry9yLl+IZZuU8i4dYVkYb7B6Elpu5VCCbhCsZZZA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 <=4'
     dependencies:
       '@iconify/utils': 1.0.32
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /tailwindcss/3.0.24:
-    resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}
+  /tailwindcss/3.1.1:
+    resolution: {integrity: sha512-F5VFj5FiS4QZqdXPE6T6RJFqbsmISQ2KBUp9bOQyws9TleGToHsa54X8kwXwVdHMQhNeXOlxI47lrRICEVuOvg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
       arg: 5.0.1
       chokidar: 3.5.3
       color-name: 1.1.4
-      detective: 5.2.0
+      detective: 5.2.1
       didyoumean: 1.2.2
       dlv: 1.1.3
       fast-glob: 3.2.11
@@ -2203,6 +2186,7 @@ packages:
       object-hash: 3.0.0
       picocolors: 1.0.0
       postcss: 8.4.14
+      postcss-import: 14.1.0_postcss@8.4.14
       postcss-js: 4.0.0_postcss@8.4.14
       postcss-load-config: 3.1.4_postcss@8.4.14
       postcss-nested: 5.0.6_postcss@8.4.14

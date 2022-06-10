@@ -17,7 +17,7 @@ export default function About() {
           <li>🦀 Try to learn Rust, CDRT and many other cool things</li>
         </ul>
         <h1 className="mb-4 mt-10 text-2xl font-bold">My major Stacks</h1>
-        <div className="flex flex-wrap gap-3 text-3xl children:inline-block children:rounded-2xl children:bg-neutral-100 children:p-6 dark:children:bg-neutral-800">
+        <div className="flex flex-wrap gap-3 text-3xl [&>*]:inline-block [&>*]:rounded-2xl [&>*]:bg-neutral-100 [&>*]:p-6 dark:[&>*]:bg-neutral-800">
           {[
             <div key="javascript" className="i-[logos-javascript]" />,
             <div key="typescript" className="i-[logos-typescript-icon]" />,
@@ -35,7 +35,7 @@ export default function About() {
           ))}
         </div>
         <h1 className="mb-4 mt-10 text-2xl font-bold">Working Experience</h1>
-        <ul className="leading-5 children:mb-4 children:flex">
+        <ul className="leading-5 [&>*]:mb-4 [&>*]:flex">
           <li>
             <div>
               <div>2020.10 - *</div>
