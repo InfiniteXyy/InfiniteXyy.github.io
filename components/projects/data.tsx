@@ -119,6 +119,12 @@ export const catagories: ICategory[] = [
     name: "Frontend Ecosystem",
     projects: [
       {
+        name: "zustand-computed-middleware",
+        description: "A Zustand middleware for creating computed values.",
+        url: "https://github.com/InfiniteXyy/zustand-computed-middleware",
+        badge: "new",
+      },
+      {
         name: "tailwindcss-iconify",
         description: "A tailwindcss plugin for iconify, a copy of @unocss/preset-icon",
         url: "https://github.com/InfiniteXyy/tailwindcss-iconify",
