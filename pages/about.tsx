@@ -38,7 +38,7 @@ export default function About() {
         <ul className="leading-5 [&>*]:mb-4 [&>*]:flex">
           <li>
             <div>
-              <div>2020.10 - *</div>
+              <div>2020.10 - 2022.6</div>
               <div className="text-sm opacity-60">(Frontend Developer)</div>
             </div>
             <strong className="ml-auto">LeetCode</strong>
