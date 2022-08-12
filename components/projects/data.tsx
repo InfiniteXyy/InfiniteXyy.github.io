@@ -55,7 +55,6 @@ export const catagories: ICategory[] = [
         name: "Process Killer",
         description: "A user friendly Developer Tool for killing processes",
         url: "https://process.xyynext.xyz/",
-        badge: "new",
         stack: ["React", "Rust"],
       },
       {
@@ -122,13 +121,11 @@ export const catagories: ICategory[] = [
         name: "zustand-computed-middleware",
         description: "A Zustand middleware for creating computed values.",
         url: "https://github.com/InfiniteXyy/zustand-computed-middleware",
-        badge: "new",
       },
       {
         name: "tailwindcss-iconify",
         description: "A tailwindcss plugin for iconify, a copy of @unocss/preset-icon",
         url: "https://github.com/InfiniteXyy/tailwindcss-iconify",
-        badge: "new",
       },
       {
         name: "React Global Component",
@@ -180,7 +177,6 @@ export const catagories: ICategory[] = [
         name: "React Native Starter Lite",
         description: "⚛ A starter template for React Native",
         url: "https://github.com/InfiniteXyy/react-native-starter-lite",
-        badge: "new",
       },
       {
         name: "NextJS Starter Lite",
