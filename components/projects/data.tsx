@@ -7,7 +7,7 @@ export const catagories: ICategory[] = [
       {
         name: "Ideas",
         description: "A collection of my strange but may be useful ideas",
-        url: "https://xyynext.xyz/ideas/index.html",
+        url: "https://xyynext.com/ideas/index.html",
         icon: <div className="i-[fa-lightbulb-o]" />,
         stack: ["vitepress", "doc"],
       },
@@ -54,7 +54,7 @@ export const catagories: ICategory[] = [
       {
         name: "Process Killer",
         description: "A user friendly Developer Tool for killing processes",
-        url: "https://process.xyynext.xyz/",
+        url: "https://process.xyynext.com/",
         stack: ["React", "Rust"],
       },
       {
