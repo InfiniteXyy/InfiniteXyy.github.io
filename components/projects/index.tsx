@@ -1,6 +1,6 @@
-import { IProject } from "./project-item";
-import { Category } from "./project-category";
-import { catagories } from "./data";
+import { IProject } from './project-item';
+import { Category } from './project-category';
+import { catagories } from './data';
 
 export type { IProject };
 

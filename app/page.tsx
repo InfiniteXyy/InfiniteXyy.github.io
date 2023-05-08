@@ -5,10 +5,12 @@ export default function Home() {
   return (
     <>
       <div className="flex h-full flex-col items-center justify-between text-center">
-        <Header />
+        <Header currentPath="/" />
         <div className="flex flex-col items-center">
-          <h1 className="mb-5 text-4xl md:text-5xl font-bold text-neutral-900 dark:text-neutral-50">Shawn Xu</h1>
-          <h2 className="text-xl md:text-2xl text-neutral-400 dark:text-neutral-500">I think, and build interesting projects</h2>
+          <h1 className="mb-5 text-4xl font-bold text-neutral-900 dark:text-neutral-50 md:text-5xl">Shawn Xu</h1>
+          <h2 className="text-xl text-neutral-400 dark:text-neutral-500 md:text-2xl">
+            I think, and build interesting projects
+          </h2>
           <div className="mt-10 flex items-center gap-5 text-4xl text-gray-500">
             <a
               href="https://github.com/infinitexyy"

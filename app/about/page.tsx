@@ -3,8 +3,8 @@ import { Header } from 'components/header';
 export default function About() {
   return (
     <>
-      <Header />
-      <div className="mx-auto max-w-[800px] bg-neutral-50 py-5 px-5 leading-9 dark:bg-neutral-900 md:py-20">
+      <Header currentPath="/about" />
+      <div className="mx-auto max-w-[800px] bg-neutral-50 px-5 py-5 leading-9 dark:bg-neutral-900 md:py-20">
         <h1 className="mb-4 text-2xl font-bold">Frontend Engineer</h1>
         <ul>
           <li>

@@ -1,23 +1,17 @@
 import clsx from 'clsx';
-import { useIsServer } from 'hooks';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { ThemeSwitcher } from './theme-switcher';
 
 const routes = [
   { name: 'Home', route: '/' },
   { name: 'About', route: '/about' },
 ];
 
-export function Header() {
-  const router = useRouter();
-  const isServer = useIsServer();
-  const { resolvedTheme, setTheme } = useTheme();
-
+export function Header({ currentPath }: { currentPath: string }) {
   return (
     <header className="flex w-full items-center border-b border-neutral-200 bg-neutral-100 px-4 py-1 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow">
       {routes.map((route) => {
-        const isActive = route.route === router.pathname;
+        const isActive = route.route === currentPath;
         return (
           <Link
             href={route.route}
@@ -33,16 +27,7 @@ export function Header() {
           </Link>
         );
       })}
-      {!isServer && (
-        <div
-          className="ml-auto cursor-pointer rounded p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
-          onClick={() => (resolvedTheme === 'light' ? setTheme('dark') : setTheme('light'))}
-        >
-          <div
-            className={clsx(resolvedTheme === 'light' ? 'i-[ph-moon-fill]' : 'i-[heroicons-solid-sun]', 'text-lg')}
-          />
-        </div>
-      )}
+      <ThemeSwitcher />
     </header>
   );
 }

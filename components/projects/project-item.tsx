@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackItem, StackTag } from './stack-tag';
+import { StackTag, type StackItem } from './stack-tag';
 
 export type IProject = {
   name: string;
@@ -19,11 +19,6 @@ export function ProjectItem(props: { project: IProject }) {
       rel="noreferrer"
       target="_blank"
     >
-      <style global jsx>{`
-        a:hover [class*='opacity'] {
-          opacity: 1;
-        }
-      `}</style>
       <div className="text-md cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap font-bold text-blue-500 dark:text-blue-400">
         {project.name}
       </div>
@@ -35,9 +30,9 @@ export function ProjectItem(props: { project: IProject }) {
           ))}
         </div>
       )}
-      {project.icon && <div className="absolute top-2 right-2 text-6xl !opacity-5">{project.icon}</div>}
+      {project.icon && <div className="absolute right-2 top-2 text-6xl !opacity-5">{project.icon}</div>}
       {project.badge && (
-        <div className="absolute top-0 right-0 w-10 rounded-bl bg-green-600 text-center text-white text-sm font-bold opacity-75">
+        <div className="absolute right-0 top-0 w-10 rounded-bl bg-green-600 text-center text-sm font-bold text-white opacity-75">
           {project.badge}
         </div>
       )}
