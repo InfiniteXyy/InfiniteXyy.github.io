@@ -4,13 +4,13 @@ export const catagories: ICategory[] = [
   {
     name: 'Fun Projects',
     projects: [
-      // {
-      //   name: 'Ideas',
-      //   description: 'A collection of my strange but may be useful ideas',
-      //   url: 'https://infinitexyy.github.io/ideas/index.html',
-      //   icon: <div className="i-[fa-lightbulb-o]" />,
-      //   stack: ['vitepress', 'doc'],
-      // },
+      {
+        name: 'Ideas',
+        description: 'A collection of my strange but may be useful ideas',
+        url: 'https://infinitexyy.github.io/ideas/index.html',
+        icon: <div className="i-[fa-lightbulb-o]" />,
+        stack: ['vitepress', 'doc'],
+      },
       {
         name: 'unplugin-pomodoro',
         description: 'A plugin to put a pmodoro timer on your web page in development',
