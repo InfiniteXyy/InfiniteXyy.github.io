@@ -12,8 +12,10 @@ export type IProject = {
 
 export function ProjectItem(props: { project: IProject }) {
   const { project } = props;
+
+  const LinkItem = project.url ? 'a' : 'div';
   return (
-    <a
+    <LinkItem
       className="relative flex h-auto flex-col overflow-hidden rounded border bg-neutral-100 p-4 text-base transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-700"
       href={project.url}
       rel="noreferrer"
@@ -36,6 +38,6 @@ export function ProjectItem(props: { project: IProject }) {
           {project.badge}
         </div>
       )}
-    </a>
+    </LinkItem>
   );
 }

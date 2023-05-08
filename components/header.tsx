@@ -5,7 +5,7 @@ import { ThemeSwitcher } from './theme-switcher';
 const routes = [
   { name: 'Home', route: '/' },
   { name: 'About', route: '/about' },
-];
+] as const;
 
 export function Header({ currentPath }: { currentPath: string }) {
   return (
