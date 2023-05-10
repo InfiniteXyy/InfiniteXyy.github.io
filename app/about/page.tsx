@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <Header currentPath="/about" />
-      <div className="mx-auto max-w-[800px] bg-neutral-50 px-5 py-5 leading-9 dark:bg-neutral-900 md:py-20">
+      <div className="mx-auto max-w-[800px] px-5 py-5 leading-9 md:py-20">
         <h1 className="mb-4 text-2xl font-bold">Frontend Engineer</h1>
         <ul>
           <li>

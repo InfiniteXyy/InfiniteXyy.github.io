@@ -4,7 +4,7 @@ import { Projects } from 'components/projects';
 export default function Home() {
   return (
     <>
-      <div className="flex h-full flex-col items-center justify-between text-center">
+      <div className="flex h-full flex-col items-center justify-between bg-white bg-gradient-to-b from-slate-200 to-white text-center dark:from-slate-900 dark:to-black">
         <Header currentPath="/" />
         <div className="flex flex-col items-center">
           <h1 className="mb-5 text-4xl font-bold text-neutral-900 dark:text-neutral-50 md:text-5xl">Shawn Xu</h1>
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-neutral-50 py-10 dark:bg-neutral-900">
+      <div className="bg-white py-10 dark:bg-black">
         <Projects />
       </div>
     </>

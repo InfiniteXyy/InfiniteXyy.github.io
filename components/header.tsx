@@ -9,7 +9,7 @@ const routes = [
 
 export function Header({ currentPath }: { currentPath: string }) {
   return (
-    <header className="flex w-full items-center border-b border-neutral-200 bg-neutral-100 px-4 py-1 dark:border-neutral-700 dark:bg-neutral-900 dark:shadow">
+    <header className="flex w-full items-center bg-neutral-50 px-4 py-1 shadow-sm dark:border-b dark:border-neutral-700 dark:bg-neutral-950">
       {routes.map((route) => {
         const isActive = route.route === currentPath;
         return (
@@ -18,9 +18,9 @@ export function Header({ currentPath }: { currentPath: string }) {
             key={route.route}
             passHref
             className={clsx(
-              'mr-6 flex h-10 items-center justify-center text-lg transition',
-              isActive && 'cursor-default font-bold text-blue-500 dark:text-blue-400',
-              !isActive && 'cursor-pointer text-neutral-400 hover:text-neutral-700'
+              'text-md mr-6 flex h-10 items-center justify-center transition',
+              isActive && 'cursor-default text-blue-500 dark:text-blue-400',
+              !isActive && 'cursor-pointer text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
             )}
           >
             {route.name}
