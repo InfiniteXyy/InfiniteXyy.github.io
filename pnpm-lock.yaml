@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@iconify/json':
-    specifier: ^2.2.61
-    version: 2.2.61
+    specifier: ^2.2.63
+    version: 2.2.63
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -22,8 +22,8 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: 18.16.5
-    version: 18.16.5
+    specifier: 20.1.2
+    version: 20.1.2
   '@types/react':
     specifier: ^18.2.6
     version: 18.2.6
@@ -45,12 +45,15 @@ devDependencies:
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
+  prettier-plugin-organize-imports:
+    specifier: ^3.2.2
+    version: 3.2.2(prettier@2.8.8)(typescript@5.0.4)
   prettier-plugin-tailwindcss:
     specifier: ^0.2.8
-    version: 0.2.8(prettier@2.8.8)
+    version: 0.2.8(prettier-plugin-organize-imports@3.2.2)(prettier@2.8.8)
   tailwind-scrollbar:
-    specifier: ^3.0.0
-    version: 3.0.0(tailwindcss@3.3.2)
+    specifier: ^3.0.1
+    version: 3.0.1(tailwindcss@3.3.2)
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -151,8 +154,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json@2.2.61:
-    resolution: {integrity: sha512-N2aHf3iIE7CWnZieytACY3K5auRyE25Nc4rEuKwMIH/hkbNNgYubPvMqpEqIOHkv/0QsDQXPeeG1tK27wiXgWA==}
+  /@iconify/json@2.2.63:
+    resolution: {integrity: sha512-IWbwz8LLl2YMKIFKOWzBxzRHwf6PciaGwM4c5J8T2PKBSHUToThBBrfxwX0gHu0O3EZ5z+o9QQp77qCwbCzgYw==}
     dependencies:
       '@iconify/types': 1.1.0
       pathe: 1.1.0
@@ -241,6 +244,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -250,6 +254,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -259,6 +264,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -268,6 +274,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -346,8 +353,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node@18.16.5:
-    resolution: {integrity: sha512-seOA34WMo9KB+UA78qaJoCO20RJzZGVXQ5Sh6FWu0g/hfT44nKXnej3/tCQl7FL97idFpBhisLYCTB50S0EirA==}
+  /@types/node@20.1.2:
+    resolution: {integrity: sha512-CTO/wa8x+rZU626cL2BlbCDzydgnFNgc19h4YvizpTO88MFQxab8wqisxaofQJ/9bLGugRdWIuX/TbIs6VVF6g==}
     dev: true
 
   /@types/prop-types@15.7.5:
@@ -2373,7 +2380,24 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-tailwindcss@0.2.8(prettier@2.8.8):
+  /prettier-plugin-organize-imports@3.2.2(prettier@2.8.8)(typescript@5.0.4):
+    resolution: {integrity: sha512-e97lE6odGSiHonHJMTYC0q0iLXQyw0u5z/PJpvP/3vRy6/Zi9kLBwFAbEGjDzIowpjQv8b+J04PDamoUSQbzGA==}
+    peerDependencies:
+      '@volar/vue-language-plugin-pug': ^1.0.4
+      '@volar/vue-typescript': ^1.0.4
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+    peerDependenciesMeta:
+      '@volar/vue-language-plugin-pug':
+        optional: true
+      '@volar/vue-typescript':
+        optional: true
+    dependencies:
+      prettier: 2.8.8
+      typescript: 5.0.4
+    dev: true
+
+  /prettier-plugin-tailwindcss@0.2.8(prettier-plugin-organize-imports@3.2.2)(prettier@2.8.8):
     resolution: {integrity: sha512-KgPcEnJeIijlMjsA6WwYgRs5rh3/q76oInqtMXBA/EMcamrcYJpyhtRhyX1ayT9hnHlHTuO8sIifHF10WuSDKg==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -2423,6 +2447,7 @@ packages:
         optional: true
     dependencies:
       prettier: 2.8.8
+      prettier-plugin-organize-imports: 3.2.2(prettier@2.8.8)(typescript@5.0.4)
     dev: true
 
   /prettier@2.8.8:
@@ -2743,8 +2768,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /tailwind-scrollbar@3.0.0(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-OkVRX9Q1T769vk979UZ519jhj/j/zNBHql7zPLI+tlhX+ahksYO4ZryWD29lOETDx9Wj1sw+K1OeW7W3+ECQOA==}
+  /tailwind-scrollbar@3.0.1(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-mM0ecSf/RGRGWw/qB0Zg1bWhuXIkpmleNAFgMxdb4eERgA6eQ0kVouYsF3/OvBqDSK8RJikZC/ynGPxnfXeddw==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: 3.x
