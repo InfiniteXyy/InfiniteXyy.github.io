@@ -1,6 +1,68 @@
-import { Header } from 'components/header';
+import { Fragment } from 'react';
+import { Header } from '../../components/header';
 
 export default function About() {
+  function renderStacks() {
+    const stacks = {
+      frontend: [
+        { key: 'javascript', className: 'i-[logos-javascript]' },
+        { key: 'typescript', className: 'i-[logos-typescript-icon]' },
+        { key: 'react', className: 'i-[logos-react]' },
+        { key: 'nextjs', className: 'i-[logos-nextjs-icon]' },
+        { key: 'vue', className: 'i-[logos-vue]' },
+        { key: 'nuxt', className: 'i-[logos-nuxt-icon]' },
+        { key: 'graphql', className: 'i-[logos-graphql]' },
+        { key: 'python', className: 'i-[logos-python]' },
+        { key: 'tailwindcss', className: 'i-[logos-tailwindcss-icon]' },
+        { key: 'vitejs', className: 'i-[logos-vitejs]' },
+        { key: 'rollupjs', className: 'i-[logos-rollupjs]' },
+        { key: 'react-query', className: 'i-[logos-react-query-icon]' },
+        { key: 'trpc', className: 'i-[logos-trpc]' },
+      ],
+      'game dev': [
+        { key: 'csdharp', className: 'i-[logos-c-sharp]' },
+        { key: 'godot', className: 'i-[logos-godot-icon]' },
+        { key: 'unity', className: 'i-[logos-unity]' },
+      ],
+    };
+    return Object.entries(stacks).map(([category, stacks]) => (
+      <Fragment key={category}>
+        <h1 className="mb-4 mt-10 text-2xl font-bold">{`My ${category} stacks`}</h1>
+        <div className="flex flex-wrap gap-3 text-3xl [&>*]:inline-block [&>*]:rounded-2xl [&>*]:bg-neutral-100 [&>*]:p-6 dark:[&>*]:bg-neutral-800">
+          {stacks.map(({ key, className }) => (
+            <div key={key}>
+              <div className={className} />
+            </div>
+          ))}
+        </div>
+      </Fragment>
+    ));
+  }
+
+  function renderWorkingExperience() {
+    const experiences = [
+      { date: '2022.7 - *', company: 'SAP', position: 'Frontend Developer' },
+      { date: '2020.10 - 2022.6', company: 'LeetCode', position: 'Frontend Developer' },
+      { date: '2019.7 - 2020.10', company: 'Trip.com', position: 'Intern/Frontend Developer' },
+    ];
+    return (
+      <>
+        <h1 className="mb-4 mt-10 text-2xl font-bold">Working Experience</h1>
+        <ul className="leading-5 [&>*]:mb-4 [&>*]:flex">
+          {experiences.map(({ date, company, position }) => (
+            <li key={company}>
+              <div>
+                <div>{date}</div>
+                <div className="text-sm opacity-60">{`(${position})`}</div>
+              </div>
+              <strong className="ml-auto">{company}</strong>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
   return (
     <>
       <Header currentPath="/about" />
@@ -14,50 +76,12 @@ export default function About() {
             </a>
           </li>
           <li>😊 Love JavaScript/TypeScript and React.js</li>
-          <li>🦀 Try to learn Rust, CDRT and many other cool things</li>
+          <li>🍹 Good at CSS / State Management / FE infra</li>
+          <li>🦀 Try to be a game developer</li>
         </ul>
-        <h1 className="mb-4 mt-10 text-2xl font-bold">My major Stacks</h1>
-        <div className="flex flex-wrap gap-3 text-3xl [&>*]:inline-block [&>*]:rounded-2xl [&>*]:bg-neutral-100 [&>*]:p-6 dark:[&>*]:bg-neutral-800">
-          {[
-            <div key="javascript" className="i-[logos-javascript]" />,
-            <div key="typescript" className="i-[logos-typescript-icon]" />,
-            <div key="react" className="i-[logos-react]" />,
-            <div key="nextjs" className="i-[logos-nextjs-icon]" />,
-            <div key="vue" className="i-[logos-vue]" />,
-            <div key="nuxt" className="i-[logos-nuxt-icon]" />,
-            <div key="graphql" className="i-[logos-graphql]" />,
-            <div key="python" className="i-[logos-python]" />,
-            <div key="tailwindcss" className="i-[logos-tailwindcss-icon]" />,
-            <div key="vitejs" className="i-[logos-vitejs]" />,
-            <div key="rollupjs" className="i-[logos-rollupjs]" />,
-          ].map((ele, index) => (
-            <div key={index}>{ele}</div>
-          ))}
-        </div>
-        <h1 className="mb-4 mt-10 text-2xl font-bold">Working Experience</h1>
-        <ul className="leading-5 [&>*]:mb-4 [&>*]:flex">
-          <li>
-            <div>
-              <div>2022.7 - *</div>
-              <div className="text-sm opacity-60">(Frontend Developer)</div>
-            </div>
-            <strong className="ml-auto">SAP</strong>
-          </li>
-          <li>
-            <div>
-              <div>2020.10 - 2022.6</div>
-              <div className="text-sm opacity-60">(Frontend Developer)</div>
-            </div>
-            <strong className="ml-auto">LeetCode</strong>
-          </li>
-          <li>
-            <div>
-              <div>2019.7 - 2020.10</div>
-              <div className="text-sm opacity-60">(Intern/Frontend Developer)</div>
-            </div>
-            <strong className="ml-auto">Trip.com</strong>
-          </li>
-        </ul>
+
+        {renderStacks()}
+        {renderWorkingExperience()}
       </div>
     </>
   );
