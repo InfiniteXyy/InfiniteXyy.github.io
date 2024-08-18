@@ -1,14 +1,14 @@
 import React from 'react';
-import { StackTag, type StackItem } from './stack-tag';
+import { type StackItem, StackTag } from './stack-tag';
 
-export type IProject = {
+export interface IProject {
   name: string;
   description: string;
   url: string;
   icon?: React.ReactNode;
   badge?: string;
   stack?: StackItem[];
-};
+}
 
 export function ProjectItem(props: { project: IProject }) {
   const { project } = props;
@@ -27,7 +27,7 @@ export function ProjectItem(props: { project: IProject }) {
       <div className="my-2 text-sm">{project.description}</div>
       {project.stack && (
         <div className="flex flex-wrap space-x-1">
-          {project.stack?.map((stack) => (
+          {project.stack?.map(stack => (
             <StackTag key={stack} type={stack} />
           ))}
         </div>

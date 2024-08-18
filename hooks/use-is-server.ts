@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export function useIsServer() {
   const [isServer, setIsServer] = useState(true);

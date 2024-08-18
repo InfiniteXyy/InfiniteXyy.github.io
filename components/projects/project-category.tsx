@@ -1,9 +1,10 @@
-import { IProject, ProjectItem } from './project-item';
+import type { IProject } from './project-item';
+import { ProjectItem } from './project-item';
 
-export type ICategory = {
+export interface ICategory {
   name: string;
   projects: IProject[];
-};
+}
 
 export function Category(props: { category: ICategory }) {
   const { category } = props;
@@ -15,7 +16,7 @@ export function Category(props: { category: ICategory }) {
         <span>{category.name}</span>
       </div>
       <div className="mx-auto grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
-        {category.projects.map((project) => (
+        {category.projects.map(project => (
           <ProjectItem key={project.name} project={project} />
         ))}
       </div>

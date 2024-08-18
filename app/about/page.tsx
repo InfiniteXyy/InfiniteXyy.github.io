@@ -4,7 +4,7 @@ import { Header } from '../../components/header';
 export default function About() {
   function renderStacks() {
     const stacks = {
-      frontend: [
+      'frontend': [
         { key: 'javascript', className: 'i-[logos-javascript]' },
         { key: 'typescript', className: 'i-[logos-typescript-icon]' },
         { key: 'react', className: 'i-[logos-react]' },
@@ -28,9 +28,9 @@ export default function About() {
     return Object.entries(stacks).map(([category, stacks]) => (
       <Fragment key={category}>
         <h1 className="mb-4 mt-10 text-2xl font-bold">{`My ${category} stacks`}</h1>
-        <div className="flex flex-wrap gap-3 text-3xl [&>*]:inline-block [&>*]:rounded-2xl [&>*]:bg-neutral-100 [&>*]:p-6 dark:[&>*]:bg-neutral-800">
+        <div className="flex flex-wrap gap-3 text-3xl">
           {stacks.map(({ key, className }) => (
-            <div key={key}>
+            <div key={key} className="inline-block rounded-2xl bg-neutral-100 p-6 dark:bg-neutral-600">
               <div className={className} />
             </div>
           ))}
@@ -70,7 +70,8 @@ export default function About() {
         <h1 className="mb-4 text-2xl font-bold">Frontend Engineer</h1>
         <ul>
           <li>
-            📫 How to reach me:{' '}
+            📫 How to reach me:
+            {' '}
             <a href="mailto: xuyiyangwing@gmail.com" className="underline">
               xuyiyangwing@gmail.com
             </a>

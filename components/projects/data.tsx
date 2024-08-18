@@ -1,4 +1,4 @@
-import { ICategory } from './project-category';
+import type { ICategory } from './project-category';
 
 export const catagories: ICategory[] = [
   {
@@ -34,7 +34,7 @@ export const catagories: ICategory[] = [
       },
       {
         name: 'Micro Use',
-        description: "A composition API plugin for Vercel's Micro",
+        description: 'A composition API plugin for Vercel\'s Micro',
         url: 'https://github.com/InfiniteXyy/micro-use',
         icon: <div className="i-[fa-solid-database]" />,
         stack: ['backend', 'plugin'],

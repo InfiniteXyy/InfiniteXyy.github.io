@@ -1,7 +1,7 @@
 'use client';
 import { clsx } from 'clsx';
-import { useIsServer } from 'hooks';
 import { useTheme } from 'next-themes';
+import { useIsServer } from '~/hooks';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();

@@ -20,7 +20,7 @@ export function Header({ currentPath }: { currentPath: string }) {
             className={clsx(
               'text-md mr-6 flex h-10 items-center justify-center transition',
               isActive && 'cursor-default text-blue-500 dark:text-blue-400',
-              !isActive && 'cursor-pointer text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+              !isActive && 'cursor-pointer text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200',
             )}
           >
             {route.name}

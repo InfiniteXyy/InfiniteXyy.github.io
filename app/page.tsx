@@ -1,5 +1,5 @@
-import { Header } from 'components/header';
-import { Projects } from 'components/projects';
+import { Header } from '~/components/header';
+import { Projects } from '~/components/projects';
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
               <div className="i-[logos-twitter]" />
             </a>
             <a
-              href={'https://www.zhihu.com/people/san-qian-yan-yan-huo'}
+              href="https://www.zhihu.com/people/san-qian-yan-yan-huo"
               className="rounded-lg p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
             >
               <div className="i-[simple-icons-zhihu] text-blue-500" />
