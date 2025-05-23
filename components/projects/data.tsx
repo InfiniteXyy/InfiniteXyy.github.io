@@ -54,7 +54,7 @@ export const catagories: ICategory[] = [
       {
         name: 'Process Killer',
         description: 'A user friendly Developer Tool for killing processes',
-        url: 'https://process.xyynext.com/',
+        url: 'https://process-killer-release.vercel.app/',
         stack: ['React', 'Rust'],
       },
       {
@@ -173,6 +173,13 @@ export const catagories: ICategory[] = [
   {
     name: 'Templates',
     projects: [
+      {
+        name: 'Monorepo boilerplate',
+        description: '⚛ A monorepo boilerplate for backend and frontend, based on contract',
+        url: 'https://github.com/InfiniteXyy/monorepo-boilerplate',
+        badge: "New",
+        icon: <div className="i-[fa-solid-layer-group]" />,
+      },
       {
         name: 'React Native Starter Lite',
         description: '⚛ A starter template for React Native',
