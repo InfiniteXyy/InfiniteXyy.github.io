@@ -18,9 +18,9 @@ export function ProjectItem({ project }: { project: IProject }) {
       className="project-row group block px-5 py-4"
       {...(project.url ? { href: project.url, rel: 'noreferrer', target: '_blank' } : {})}
     >
-      <div className="flex items-center gap-5">
+      <div className="flex items-center justify-between gap-5">
         {/* Name */}
-        <div className="font-semibold text-base text-ink group-hover:text-accent transition-colors duration-150 shrink-0 w-36 md:w-52 truncate">
+        <div className="font-semibold text-base text-ink group-hover:text-accent transition-colors duration-150 shrink-0 truncate">
           {project.name}
           {project.badge && (
             <span
@@ -39,7 +39,7 @@ export function ProjectItem({ project }: { project: IProject }) {
 
         {/* Stack tags */}
         {project.stack && project.stack.length > 0 && (
-          <div className="hidden lg:flex items-center gap-2 shrink-0">
+          <div className="hidden lg:flex items-center gap-1 shrink-0">
             {project.stack.map((stack, i) => (
               <Fragment key={stack}>
                 {i > 0 && <span className="text-rule-light text-xs select-none">·</span>}

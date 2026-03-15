@@ -35,6 +35,6 @@ const colorMap: Record<StackItem, string> = {
 
 export function StackTag({ type }: { type: StackItem }) {
   return (
-    <span className={`text-xs font-medium ${colorMap[type]}`}>{type}</span>
+    <span className={`text-xs font-medium ${colorMap[type]} bg-white/50 px-2 py-0.5 rounded-full`}>{type}</span>
   );
 }
