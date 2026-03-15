@@ -2,11 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-html,
-body,
-#__next {
+/* ─── Design tokens ─────────────────────────────────────── */
+:root {
+  --bg: #F8F4EE;
+  --surface: #FFFDF9;
+  --bg-alt: #EEE8DE;
+  --ink: #1A1410;
+  --ink-muted: #8A7A68;
+  --accent: #C96A18;
+  --accent-dim: rgba(201, 106, 24, 0.12);
+  --rule: #D8D0C4;
+  --rule-light: #EDE5D8;
+}
+
+.dark {
+  --bg: #131210;
+  --surface: #1C1916;
+  --bg-alt: #201E1A;
+  --ink: #F0EAE0;
+  --ink-muted: #7A6A58;
+  --accent: #E8922A;
+  --accent-dim: rgba(232, 146, 42, 0.13);
+  --rule: #2E2820;
+  --rule-light: #252018;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
-  font-family: 'Hind Siliguri', sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Animation utilities ───────────────────────────────── */
+.animate-in {
+  opacity: 0;
+  animation: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 60ms; }
+.delay-2 { animation-delay: 160ms; }
+.delay-3 { animation-delay: 280ms; }
+.delay-4 { animation-delay: 420ms; }
+.delay-5 { animation-delay: 560ms; }
+.delay-6 { animation-delay: 700ms; }
+
+/* ─── Hero dot-grid ─────────────────────────────────────── */
+.hero-grid {
+  background-image: radial-gradient(circle, var(--rule) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+
+/* ─── Project row ───────────────────────────────────────── */
+.project-row {
+  position: relative;
+  border-radius: 3px;
+  transition: background-color 0.15s ease;
+}
+
+.project-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transform: scaleY(0);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.project-row:hover::before {
+  transform: scaleY(1);
+}
+
+.project-row:hover {
+  background-color: var(--accent-dim);
 }

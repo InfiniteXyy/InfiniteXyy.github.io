@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { type StackItem, StackTag } from './stack-tag';
 
 export interface IProject {
@@ -10,34 +10,55 @@ export interface IProject {
   stack?: StackItem[];
 }
 
-export function ProjectItem(props: { project: IProject }) {
-  const { project } = props;
+export function ProjectItem({ project }: { project: IProject }) {
+  const Wrapper = project.url ? 'a' : 'div';
 
-  const LinkItem = project.url ? 'a' : 'div';
   return (
-    <LinkItem
-      className="relative flex h-auto flex-col overflow-hidden rounded border bg-neutral-100 p-4 text-base transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-700"
-      href={project.url}
-      rel="noreferrer"
-      target="_blank"
+    <Wrapper
+      className="project-row group block px-5 py-4"
+      {...(project.url ? { href: project.url, rel: 'noreferrer', target: '_blank' } : {})}
     >
-      <div className="text-md cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap font-bold text-blue-500 dark:text-blue-400">
-        {project.name}
+      <div className="flex items-center gap-5">
+        {/* Name */}
+        <div className="font-semibold text-base text-ink group-hover:text-accent transition-colors duration-150 shrink-0 w-36 md:w-52 truncate">
+          {project.name}
+          {project.badge && (
+            <span
+              className="ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded-sm align-middle"
+              style={{ backgroundColor: 'var(--accent)', color: '#fff' }}
+            >
+              {project.badge}
+            </span>
+          )}
+        </div>
+
+        {/* Description */}
+        <div className="text-muted text-sm leading-relaxed flex-1 min-w-0 hidden md:block truncate">
+          {project.description}
+        </div>
+
+        {/* Stack tags */}
+        {project.stack && project.stack.length > 0 && (
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
+            {project.stack.map((stack, i) => (
+              <Fragment key={stack}>
+                {i > 0 && <span className="text-rule-light text-xs select-none">·</span>}
+                <StackTag type={stack} />
+              </Fragment>
+            ))}
+          </div>
+        )}
+
+        {/* Arrow */}
+        {project.url && (
+          <div className="i-[heroicons-outline-arrow-up-right] text-muted text-sm shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        )}
       </div>
-      <div className="my-2 text-sm">{project.description}</div>
-      {project.stack && (
-        <div className="flex flex-wrap space-x-1">
-          {project.stack?.map(stack => (
-            <StackTag key={stack} type={stack} />
-          ))}
-        </div>
-      )}
-      {project.icon && <div className="absolute right-2 top-2 text-6xl !opacity-5">{project.icon}</div>}
-      {project.badge && (
-        <div className="absolute right-0 top-0 w-10 rounded-bl bg-green-600 text-center text-sm font-bold text-white opacity-75">
-          {project.badge}
-        </div>
-      )}
-    </LinkItem>
+
+      {/* Mobile description */}
+      <div className="text-muted text-sm leading-relaxed mt-1.5 md:hidden">
+        {project.description}
+      </div>
+    </Wrapper>
   );
 }

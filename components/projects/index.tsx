@@ -7,8 +7,8 @@ export type { IProject };
 export function Projects() {
   return (
     <div className="w-full">
-      {catagories.map(category => (
-        <Category category={category} key={category.name} />
+      {catagories.map((category, index) => (
+        <Category category={category} key={category.name} index={index} />
       ))}
     </div>
   );
