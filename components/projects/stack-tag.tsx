@@ -13,7 +13,8 @@ export type StackItem =
   | 'svelte'
   | 'plugin'
   | 'Python'
-  | 'Rust';
+  | 'Rust'
+  | 'Game';
 
 const colorMap: Record<StackItem, string> = {
   'React': 'text-sky-500',
@@ -31,10 +32,16 @@ const colorMap: Record<StackItem, string> = {
   'doc': 'text-stone-400',
   'Demo': 'text-emerald-500',
   'Browser Plugin': 'text-amber-500',
+  'Game': 'text-rose-500',
 };
 
 export function StackTag({ type }: { type: StackItem }) {
   return (
-    <span className={`text-xs font-medium ${colorMap[type]} bg-white/50 px-2 py-0.5 rounded-full`}>{type}</span>
+    <span
+      className={`text-xs font-medium ${colorMap[type]} px-2 py-0.5 rounded-full`}
+      style={{ backgroundColor: 'var(--bg-alt)' }}
+    >
+      {type}
+    </span>
   );
 }
