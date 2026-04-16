@@ -12,6 +12,13 @@ export const catagories: ICategory[] = [
         stack: ['vitepress', 'doc'],
       },
       {
+        name: 'Baba Is You',
+        description: '🧪 A web clone of Baba Is You — an AI experiment built with Claude for learning purposes',
+        url: 'https://github.com/InfiniteXyy/baba-is-you',
+        icon: <div className="i-[fa-solid-gamepad]" />,
+        stack: ['React', 'Game'],
+      },
+      {
         name: 'unplugin-pomodoro',
         description: 'A plugin to put a pmodoro timer on your web page in development',
         url: 'https://github.com/InfiniteXyy/unplugin-pomodoro',
